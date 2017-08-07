@@ -60,14 +60,14 @@
 <div id="nav">
     <nav class="nav-menu">
         <a class="site-name current" href="/" title="JSay">JSay</a>
-		<a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
-		<a class="site-name current" href="/categories/java" title="Java">Java</a>
-		<a class="site-name current" href="/categories/python" title="Python">Python</a>
-		<a class="site-name current" href="/categories/docker" title="容器云">容器云</a>
-		<a class="site-name current" href="/categories/books" title="读书">读书</a>
-		<a class="site-name current" href="/categories/travel" title="远方">远方</a>
-		<a class="site-name current" href="/categories/lovers" title="爱人">爱人</a>
-		<a class="site-name current" href="/about" title="关于我">关于我</a>
+		<!--<a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a> -->
+		<a class="site-name" href="/categories/java" title="Java">Java</a>
+		<a class="site-name" href="/categories/python" title="Python">Python</a>
+		<a class="site-name" href="/categories/docker" title="容器云">容器云</a>
+		<a class="site-name" href="/categories/books" title="读书">读书</a>
+		<a class="site-name" href="/categories/travel" title="远方">远方</a>
+		<a class="site-name" href="/categories/lovers" title="爱人">爱人</a>
+		<a class="site-name" href="/about" title="关于我">关于我</a>
     </nav>
 </div>
 <div class="nav-user">
@@ -117,15 +117,15 @@
         
         <li class="page-search">
     <form id="search" class="search-form">
-        <label for="s" class="sr-only">请输入关键字</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
-        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -137,11 +137,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(无标题)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -187,7 +187,7 @@
             </a>
         </div>
         
-        <div class="post-tags">标签：
+        <div class="post-tags">Tags：
             
             <a href="/tags/kuberbets/">kuberbets</a>
             
@@ -203,9 +203,9 @@
     <div class="footer-inner">
         <!--
 		<p>
-            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/help" title="帮助中心" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/video" title="视频资源">视频资源</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
 		-->
 		<!-- 自定义链接 -->
 		<!--
