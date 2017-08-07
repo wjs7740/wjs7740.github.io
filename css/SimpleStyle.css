@@ -2361,7 +2361,7 @@ body {
     left:0;
     z-index:2048;
     height:100%;
-    width:170px;
+    width:200px;
     background-color:#2a2a2a;
     text-align:left
 }
@@ -2764,7 +2764,7 @@ img.alignright {
         padding-left:45px
     }
     #nav {
-        width:45px
+        width:60px
     }
     #nav .nav-menu a.site-index,#nav .nav-menu a span {
         display:none
