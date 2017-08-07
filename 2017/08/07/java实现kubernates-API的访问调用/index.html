@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Jason Wang">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>java实现kubernates api的访问调用 - Jason写字的地方</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="JSay">JSay</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <a href="/video" title="视频资源"><i class="fa fa-video-camera"></i><span>视频资源</span></a>
+        <a href="/cross_fire" title="穿越火线"><i class="fa fa-wifi"></i><span>穿越火线</span></a>
+        <a href="/help" title="帮助中心"><i class="fa fa-question-circle"></i><span>帮助中心</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>Jason Say</h1>
+        <h3>不积跬步 无以至千里</h3>
+        <p></p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href=""  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/wjs7740"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/java" data-name="Java">Java</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/python" data-name="Python">Python</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/docker" data-name="容器云">容器云</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="算法">算法</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/books" data-name="读的书">读的书</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/travel" data-name="去的地方">去的地方</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/love_person" data-name="爱的人">爱的人</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2017-08-07">2017-08-07</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">java实现kubernates API的访问调用</h2>
+            <div class="post-meta">
+                本文总共7154个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>kubernetes及各开源社区为开发人员提供了各种语言版的Client Library，让我们可以通过编程的方式可以实现调用Kubernetes API，从而完成pod、service、RC等资源的图形化创建和管理。本篇主要介绍使用java语言的实现</p>
+<h3 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h3><p>开发基于kubernetes的容器云管理平台</p>
+<h3 id="3-基于的框架"><a href="#3-基于的框架" class="headerlink" title="3. 基于的框架"></a>3. 基于的框架</h3><p>用java语言开发的有两种，一个是基于Jersey的，一个是基于Fabric8。<br>    -Jersey是一个方便简化开发RESRFul Web Service的框架，契合kubernetesAPI的设计，所以采用jersey会比较省力，但还是需要开发者自己做很多工作。<br>    -Fabric8中的kubernates-client.xx.jar，kubernates-model.xx.jar等工具包包对kubernates api做了很好的封装，访问代码比较简单。<br>    本篇将选择fabric8实现</p>
+<h3 id="4-使用步骤"><a href="#4-使用步骤" class="headerlink" title="4. 使用步骤"></a>4. 使用步骤</h3><p>4.1 首先导入核心jar包<br><img src="http://img.blog.csdn.net/20170802112000624?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>4.2 创建连接API-Server的client<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line">package org.demo.framework.engine.k8s.util;</div><div class="line"></div><div class="line">import io.fabric8.kubernetes.api.model.*;</div><div class="line">import io.fabric8.kubernetes.api.model.extensions.*;</div><div class="line">import io.fabric8.kubernetes.api.model.extensions.Deployment;</div><div class="line">import io.fabric8.kubernetes.client.Config;</div><div class="line">import io.fabric8.kubernetes.client.ConfigBuilder;</div><div class="line">import io.fabric8.kubernetes.client.*;</div><div class="line">import okhttp3.TlsVersion;</div><div class="line">import org.apache.log4j.Logger;</div><div class="line"></div><div class="line">import java.io.Closeable;</div><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.LinkedList;</div><div class="line">import java.util.List;</div><div class="line">import java.util.Map;</div><div class="line"></div><div class="line">public class Fabric8KubeUtils implements KubeUtils&lt;KubernetesClient&gt; &#123;</div><div class="line">    private KubernetesClient client;</div><div class="line">    private static final int CONNECTION_TIMEOUT = 3 * 1000;</div><div class="line">    private static final int REQUEST_TIMEOUT = 3 * 1000;</div><div class="line">    </div><div class="line">    private static Logger logger = Logger.getLogger(Fabric8KubeUtils.class);</div><div class="line"></div><div class="line"></div><div class="line">    @Override</div><div class="line">    public KubernetesClient getClient() &#123;</div><div class="line">        return client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void setClient(KubernetesClient client) &#123;</div><div class="line">        this.client = client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    private Fabric8KubeUtils(KubernetesClient client) &#123;</div><div class="line">        this.client = client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">	/**传入参数，连接k8s的api server**/</div><div class="line">    public static KubeUtils buildKubeUtils(Cluster cluster, String namespace) throws K8sDriverException &#123;</div><div class="line">        if (cluster == null) &#123;</div><div class="line">            throw new K8sDriverException(&quot;cluster is null&quot;);</div><div class="line">        &#125;</div><div class="line">        String key = cluster.md5Key(namespace);</div><div class="line">        if (KUBEUTILSMAP.containsKey(key)) &#123;</div><div class="line">            return KUBEUTILSMAP.get(key);</div><div class="line">        &#125;</div><div class="line">        String master = cluster.getApi();</div><div class="line">        master = CommonUtil.fullUrl(master);</div><div class="line">        if (StringUtils.isBlank(master)) &#123;</div><div class="line">            throw new K8sDriverException(&quot;master api is null, cluster id=&quot; + cluster.getId() + &quot;, cluster name=&quot; + cluster.getName());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Config config;</div><div class="line">        if (master.toLowerCase().startsWith(&quot;https://&quot;)) &#123;</div><div class="line">            config = new ConfigBuilder().withMasterUrl(master)</div><div class="line">                    .withTrustCerts(true)</div><div class="line">                    .withNamespace(namespace)</div><div class="line">                    .withOauthToken(cluster.getOauthToken())</div><div class="line">                    .withUsername(cluster.getUsername())</div><div class="line">                    .withPassword(cluster.getPassword())</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_0)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_1)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_2)</div><div class="line">                    .withRequestTimeout(REQUEST_TIMEOUT)</div><div class="line">                    .withConnectionTimeout(CONNECTION_TIMEOUT)</div><div class="line">                    .build();</div><div class="line">        &#125; else &#123;</div><div class="line">            config = new ConfigBuilder().withMasterUrl(master)</div><div class="line">                    .withNamespace(namespace)</div><div class="line">                    .withOauthToken(cluster.getOauthToken())</div><div class="line">                    .withUsername(cluster.getUsername())</div><div class="line">                    .withPassword(cluster.getPassword())</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_0)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_1)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_2)</div><div class="line">                    .withTrustCerts(true)</div><div class="line">                    .withRequestTimeout(REQUEST_TIMEOUT)</div><div class="line">                    .withConnectionTimeout(CONNECTION_TIMEOUT)</div><div class="line">                    .build();</div><div class="line">        &#125;</div><div class="line">        KubeUtils kubeUtils = buildKubeUtils(config);</div><div class="line">        KUBEUTILSMAP.putIfAbsent(key, kubeUtils);</div><div class="line">        return kubeUtils;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	/**创建client**/</div><div class="line">    public static KubeUtils buildKubeUtils(Config config) throws K8sDriverException &#123;</div><div class="line">        KubernetesClient client;</div><div class="line">        try &#123;</div><div class="line">            client = new DefaultKubernetesClient(config);</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            throw new K8sDriverException(&quot;instantialize kubernetes client error&quot;);</div><div class="line">        &#125;</div><div class="line">        return new Fabric8KubeUtils(client);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">          </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.3 创建k8s的资源对象，作为参传给client操作k8s（增删改时需要）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 可以通过k8s??Builder()来创建资源对象</div><div class="line">// 如下创建一个service对象，lb为包含service必要信息的实体类对象</div><div class="line">Service newService = new K8sServiceBuilder(lb).build();</div></pre></td></tr></table></figure></p>
+<p>4.4 通过得到的client，可以对k8s的各种资源增删改查各种操作：<br>Nodes<br>Namespaces<br>Services<br>Replicationcontrollers<br>Pods<br>Deployments<br>Resourcequotas<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">/**创建pod**/</div><div class="line">@Override</div><div class="line">    public Pod createPod(Pod pod)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">        logger.debug(&quot;create pod with specify=&quot; + pod.toString());</div><div class="line">        try &#123;</div><div class="line">            return client.pods().create(pod);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">/**创建service**/</div><div class="line">@Override</div><div class="line">public Service createService(Service service)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">    logger.debug(&quot;create service=&quot; + service);</div><div class="line">    if (service == null) &#123;</div><div class="line">         return null;</div><div class="line">    &#125;</div><div class="line">    try &#123;</div><div class="line">         return client.services().create(service);</div><div class="line">    &#125; catch (KubernetesClientException e) &#123;</div><div class="line">        throw new K8sDriverException(e.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**创建RC**/</div><div class="line"> @Override</div><div class="line">    public ReplicationController createReplicationController(ReplicationController rc)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">        if (rc == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create replication controller with rc=\n&quot; + rc);</div><div class="line">        try &#123;</div><div class="line">            return client.replicationControllers().create(rc);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">/**创建deployment**/</div><div class="line">@Override</div><div class="line">    public Deployment createDeployment(Deployment deployment) throws K8sDriverException &#123;</div><div class="line">        if (deployment == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create deployment with deployment=\n&quot; + deployment);</div><div class="line">        try &#123;</div><div class="line">            return client.extensions().deployments().create(deployment);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">/**按条件列出所有node**/</div><div class="line">@Override</div><div class="line">    public NodeList listNode(Map&lt;String, String&gt; labelSelector) throws K8sDriverException &#123;</div><div class="line">        logger.debug(&quot;list node with selector=&quot; + labelSelector);</div><div class="line">        try &#123;</div><div class="line">            return client.nodes().withLabels(labelSelector).list();</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/kuberbets/">kuberbets</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="帮助中心" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="视频资源">视频资源</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/05/2017',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>

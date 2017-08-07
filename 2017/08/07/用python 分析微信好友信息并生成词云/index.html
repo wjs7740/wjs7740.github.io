@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Jason Wang">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>用python 分析微信好友信息并生成词云 - Jason写字的地方</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="JSay">JSay</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <a href="/video" title="视频资源"><i class="fa fa-video-camera"></i><span>视频资源</span></a>
+        <a href="/cross_fire" title="穿越火线"><i class="fa fa-wifi"></i><span>穿越火线</span></a>
+        <a href="/help" title="帮助中心"><i class="fa fa-question-circle"></i><span>帮助中心</span></a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>Jason Say</h1>
+        <h3>不积跬步 无以至千里</h3>
+        <p></p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href=""  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/wjs7740"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/java" data-name="Java">Java</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/python" data-name="Python">Python</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/docker" data-name="容器云">容器云</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="算法">算法</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/books" data-name="读的书">读的书</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/travel" data-name="去的地方">去的地方</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/love_person" data-name="爱的人">爱的人</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2017-08-07">2017-08-07</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">用python 分析微信好友信息并生成词云</h2>
+            <div class="post-meta">
+                本文总共4997个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>在知乎上偶然看到有人推荐itchart这个微信接口，抱着好奇的想法尝试了以下，果然非常好玩。<br>官方链接：<a href="http://itchat.readthedocs.io/zh/latest/#itchat" target="_blank" rel="external">http://itchat.readthedocs.io/zh/latest/#itchat</a></p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="http://img.blog.csdn.net/20170725173605622?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>get_info.py这个类用来爬取好友信息并保存到指定文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">import itchat</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_path = basepath+&apos;\downloads&apos;+ &apos;\\&apos;</div><div class="line"></div><div class="line"># 调用itchat接口登录并拉取数据</div><div class="line">itchat.login()</div><div class="line">friends = itchat.get_friends(update=True)[0:]</div><div class="line"></div><div class="line">fmt=&apos;%Y%m%d%H%M%S&apos;      #定义时间显示格式</div><div class="line">Date=time.strftime(fmt,time.localtime(time.time()))</div><div class="line"></div><div class="line">download_file_name = &apos;friendslist_&apos;+friends[0][&apos;NickName&apos;]+ &apos;_&apos; + Date + &apos;.txt&apos;</div><div class="line"></div><div class="line">f = open(download_path+download_file_name,&apos;wb&apos;)</div><div class="line">print(download_path+download_file_name)</div><div class="line"></div><div class="line">for i in friends[1:]:</div><div class="line">    friend = (str(i) + &quot;\n&quot;).encode(encoding=&apos;gb18030&apos;)</div><div class="line">    # print(str(i))</div><div class="line">    f.write(friend)</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure></p>
+<p>analyse.py这个类根据下载的好友数据分析好友信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"># Author:Jason.wang</div><div class="line"></div><div class="line">import re</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">base_pic = &quot;C:/Users/Think/Pictures/Saved Pictures/beb28c538ac52a91.jpg&quot;</div><div class="line">source_file = &quot;friendslist_雨佳Clara_20170724223344.txt&quot;</div><div class="line">source_file = &quot;friendslist_say_20170724132202.txt&quot;</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_file = basepath+&apos;\downloads\\&apos;+ source_file</div><div class="line"></div><div class="line">fs_str = &apos;&apos;</div><div class="line">with open(download_file,&apos;rb&apos;) as f:</div><div class="line">    fs_str = f.read().decode(&apos;gb18030&apos;)</div><div class="line"></div><div class="line">friends = fs_str.split(&apos;\n&apos;)</div><div class="line"></div><div class="line"># 初始化计数器 </div><div class="line">male = female = other = 0</div><div class="line"># 所有省份</div><div class="line">Provinces_list = []</div><div class="line">#friends[0]是自己的信息，所以要从friends[1]开始 </div><div class="line">for i in friends:</div><div class="line">    if i.__len__()&gt;0:</div><div class="line">        i = i.replace(&apos;&lt;ContactList: [&apos;,&apos;&quot;&lt;ContactList: [&apos;)</div><div class="line">        i = i.replace(&apos;]&gt;&apos;,&apos;]&gt;&quot;&apos;)</div><div class="line">        friend = eval(i)</div><div class="line"></div><div class="line">        # 统计性别</div><div class="line">        sex = friend[&quot;Sex&quot;]</div><div class="line">        if sex == 1:</div><div class="line">            male += 1</div><div class="line">            exit</div><div class="line">        elif sex ==2:</div><div class="line">            female += 1</div><div class="line">        else:</div><div class="line">            other+=1</div><div class="line"></div><div class="line">        # 统计地区</div><div class="line">        Province = friend[&quot;Province&quot;]</div><div class="line">        Provinces_list.append(Province)</div><div class="line"></div><div class="line"></div><div class="line">#计算朋友总数 </div><div class="line">total = len(friends)</div><div class="line">#打印出自己的好友性别比例 </div><div class="line">print(&quot;总好友数：  %d&quot; % total + &quot;\n&quot; +</div><div class="line">    &quot;男性好友：  %d 个,占比 %.2f%%&quot; % (male,(float(male)/total*100)) + &quot;\n&quot; +</div><div class="line">      &quot;女性好友：  %d 个,占比 %.2f%%&quot; % (female,(float(female) / total * 100)) + &quot;\n&quot; +</div><div class="line">      &quot;不明性别好友：  %d 个,占比 %.2f%%&quot; % (other,(float(other) / total * 100)))</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Provinces_set = set(Provinces_list)</div><div class="line">Provinces_dict = &#123;&#125;</div><div class="line">for i in Provinces_set:</div><div class="line">    Provinces_dict[i] = Provinces_list.count(i)</div><div class="line"># 对省份字典按value排序</div><div class="line">Provinces_dict = sorted(Provinces_dict.items(),key=lambda asd:asd[1],reverse=True)</div><div class="line"></div><div class="line">print(&quot;===============人数排名前10地区如下==================&quot;)</div><div class="line">top = 0</div><div class="line">for k,v in Provinces_dict:</div><div class="line">    if top&lt;10:</div><div class="line">        print(&quot;%s : %d 个，占比 ： %.2f%%&quot; % (k,v,float(v)/total*100))</div><div class="line">    top+=1</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><img src="http://img.blog.csdn.net/20170725174056265?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>ciyun.py根据签名生成词云<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"># -*- coding:UTF-8 -*-</div><div class="line"># Author:Jason.wang</div><div class="line">import re</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">base_pic = &quot;C:/Users/Think/Pictures/Saved Pictures/beb28c538ac52a91.jpg&quot;</div><div class="line">source_file = &quot;friendslist_雨佳Clara_20170724223344.txt&quot;</div><div class="line"># source_file = &quot;friendslist_say_20170724132202.txt&quot;</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_file = basepath+&apos;\downloads\\&apos;+ source_file</div><div class="line"></div><div class="line">fs_str = &apos;&apos;</div><div class="line">with open(download_file,&apos;rb&apos;) as f:</div><div class="line">    fs_str = f.read().decode(&apos;gb18030&apos;)</div><div class="line"></div><div class="line">friends = fs_str.split(&apos;\n&apos;)</div><div class="line"></div><div class="line"></div><div class="line">siglist = []</div><div class="line">for i in friends:</div><div class="line">    if i.__len__()&gt;0:</div><div class="line">        i = i.replace(&apos;&lt;ContactList: [&apos;,&apos;&quot;&lt;ContactList: [&apos;)</div><div class="line">        i = i.replace(&apos;]&gt;&apos;,&apos;]&gt;&quot;&apos;)</div><div class="line">        friend = eval(i)</div><div class="line">        # print(friend)</div><div class="line">        # print(friend[&quot;Signature&quot;])</div><div class="line">        signature = friend[&quot;Signature&quot;].strip().replace(&quot;span&quot;,&quot;&quot;).replace(&quot;class&quot;,&quot;&quot;).replace(&quot;emoji&quot;,&quot;&quot;)</div><div class="line">        rep = re.compile(&quot;1f\d+\w*|[&lt;&gt;/=]&quot;)</div><div class="line">        signature = rep.sub(&quot;&quot;,signature)</div><div class="line">        siglist.append(signature)</div><div class="line">text = &quot;&quot;.join(siglist)</div><div class="line"></div><div class="line">import jieba</div><div class="line">wordlist = jieba.cut(text,cut_all=True)</div><div class="line">word_space_split = &quot; &quot;.join(wordlist).replace(&quot;\n&quot;,&quot;&quot;)</div><div class="line"></div><div class="line">print(word_space_split)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">import matplotlib.pyplot as plt</div><div class="line">from wordcloud import WordCloud, ImageColorGenerator</div><div class="line">import numpy as np</div><div class="line">import PIL.Image as Image</div><div class="line"></div><div class="line">coloring = np.array(Image.open(base_pic))</div><div class="line">my_wordcloud = WordCloud(background_color=&quot;white&quot;,max_words=2000,</div><div class="line">                         mask=coloring,max_font_size=60,random_state=42,scale=2,</div><div class="line">                        font_path=&quot;C:/windows/fonts/SimHei.ttf&quot;).generate(word_space_split)</div><div class="line"></div><div class="line">image_colors = ImageColorGenerator(coloring)</div><div class="line">plt.imshow(my_wordcloud.recolor(color_func=image_colors))</div><div class="line">plt.imshow(my_wordcloud)</div><div class="line">plt.axis(&quot;off&quot;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="http://img.blog.csdn.net/20170725174447983?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/python/">python</a>
+            
+            <a href="/tags/微信/">微信</a>
+            
+            <a href="/tags/爬虫/">爬虫</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="帮助中心" >帮助中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="视频资源">视频资源</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，作者<a href="https://www.tangkunyin" target="_blank">唐先森</a>
+            ，Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/05/2017',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
