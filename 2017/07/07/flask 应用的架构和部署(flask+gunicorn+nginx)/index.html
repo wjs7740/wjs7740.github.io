@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Jason Wang">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>flask 应用的架构和部署(flask+gunicorn+nginx) - Jason Say</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="JSay">JSay</a>
+		<!--<a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a> -->
+		<a class="site-name" href="/categories/java" title="Java">Java</a>
+		<a class="site-name" href="/categories/python" title="Python">Python</a>
+		<a class="site-name" href="/categories/docker" title="容器云">容器云</a>
+		<a class="site-name" href="/categories/books" title="读的书">读的书</a>
+		<a class="site-name" href="/categories/travel" title="去的地方">去的地方</a>
+		<a class="site-name" href="/categories/lovers" title="爱的人">爱的人</a>
+		<a class="site-name" href="/about" title="关于我">关于我</a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>Jason Say</h1>
+        <h3>不积跬步 无以至千里</h3>
+        <p></p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href=""  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/wjs7740"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/../archives" data-name="归档">归档</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/../tags" data-name="标签">标签</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2017-07-07">2017-07-07</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">flask 应用的架构和部署(flask+gunicorn+nginx)</h2>
+            <div class="post-meta">
+                本文总共2087个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>本文主要介绍flask+gunicorn+nginx的配合部署过程，它只是入门的部署过程，当你的web应用有并发要求时，还应加上缓存和队列调度等等，这部分可以参考<a href="https://zhuanlan.zhihu.com/p/25038203" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25038203</a></p>
+<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p><strong>1.为什么要使用gunicorn？</strong><br>目前我们使用flask内建的wsgi server，这个server由于是单进程单线程模型的，所以性能很差，一个请求不处理完的话服务器就会阻塞住其他请求，我们需要对这个server做替换。<br>而gunicorn是一个python编写的高效的WSGI HTTP服务器，它比uwsgi使用更简单<br><strong>2.为什么需要nginx？</strong><br>nginx反向代理能带给我们很多好处：</p>
+<ul>
+<li>负载均衡，把请求平均地分到上游的app server进程。</li>
+<li>静态文件处理，静态文件的访问交给nginx来处理，降低了app server的压力。</li>
+<li>接收完客户端所有的TCP包，再一次交给上游的应用来处理，防止app server被慢请求干扰。</li>
+<li>访问控制和路由重写。</li>
+<li>强大的ngx_lua模块。</li>
+<li>Proxy cache。</li>
+<li>Gzip，SSL…</li>
+</ul>
+</blockquote>
+<h3 id="应用架构"><a href="#应用架构" class="headerlink" title="应用架构:"></a>应用架构:</h3><p><img src="http://img.blog.csdn.net/20170707110113026?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="部署步骤："><a href="#部署步骤：" class="headerlink" title="部署步骤："></a>部署步骤：</h3><p><img src="http://img.blog.csdn.net/20170707103905414?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="1-wsgi"><a href="#1-wsgi" class="headerlink" title="1. wsgi"></a>1. wsgi</h4><p>项目中创建wsgi.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from app import create_app</div><div class="line">application = create_app(&apos;production&apos;)</div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">	application.run()</div></pre></td></tr></table></figure></p>
+<h4 id="2-远程复制scp"><a href="#2-远程复制scp" class="headerlink" title="2.远程复制scp"></a>2.远程复制scp</h4><p>远程复制项目文件到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 在本地目录内执行</div><div class="line">scp -r app jason@10.222.32.10:/usr/share/www</div></pre></td></tr></table></figure></p>
+<h4 id="3-安装各种环境和依赖包并测试gunicorn服务"><a href="#3-安装各种环境和依赖包并测试gunicorn服务" class="headerlink" title="3.安装各种环境和依赖包并测试gunicorn服务"></a>3.安装各种环境和依赖包并测试gunicorn服务</h4><p>在服务器上执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 安装venv环境</div><div class="line">virtualenv venv</div><div class="line">. venv/bin/activate</div><div class="line"># 安装依赖包</div><div class="line">pip install -r requirements.txt</div><div class="line">#安装gunicorn</div><div class="line">pip install gunicorn</div><div class="line"># 测试运行服务</div><div class="line">gunicorn -w 4 -b 127.0.0.1:8000 wsgi:application</div><div class="line"># 解释</div><div class="line">-w ：要开多少个worker，即开启几个进程</div><div class="line">-b ：指定host地址</div><div class="line">wsgi: ：声明入口wsgi文件中的全局变量</div></pre></td></tr></table></figure></p>
+<h4 id="4-配置upstart"><a href="#4-配置upstart" class="headerlink" title="4.配置upstart"></a>4.配置upstart</h4><p>在linux启动时就跟随启动起来<br>在项目中编写upstart.conf并复制到服务器命名为blog.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">description &quot;My Blog service&quot;</div><div class="line"># 运行级别</div><div class="line">start on runlevel [2345]</div><div class="line">stop on runlevel [!2345]</div><div class="line"># 用户id和用户组</div><div class="line">respawn</div><div class="line">setuid root</div><div class="line">setgid www-data</div><div class="line"># 运行路径和服务运行时的工作目录</div><div class="line">env PATH=/usr/share/www/venv/bin</div><div class="line">chdir /usr/share/www/</div><div class="line"></div><div class="line">exec gunicorn -w 4 -b 127.0.0.1:8000 wsgi:application</div></pre></td></tr></table></figure></p>
+<p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 建立服务目录配置</div><div class="line">sudo nano /etc/init/blog.conf</div><div class="line"># 测试建立的文件</div><div class="line">deactivate</div><div class="line"># 开启服务</div><div class="line">sudo service blog start</div></pre></td></tr></table></figure></p>
+<h4 id="5-配置nginx（反向代理）"><a href="#5-配置nginx（反向代理）" class="headerlink" title="5. 配置nginx（反向代理）"></a>5. 配置nginx（反向代理）</h4><p>在项目中编写nginx.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># /ect/nginx/sites-available/default</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name 10.211.55.10;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">	    # 要和gunicorn配置的host地址对应上</div><div class="line">        proxy_pass http://127.0.0.1:8000;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 进入nginx默认配置文件</div><div class="line">sudo nano /ect/nginx/sites-available/default</div><div class="line"># 将server&#123;&#125;中的内容替换为上面写的内容</div><div class="line"># 重启nginx</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure></p>
+<h4 id="6-初始化数据库并重启服务"><a href="#6-初始化数据库并重启服务" class="headerlink" title="6. 初始化数据库并重启服务"></a>6. 初始化数据库并重启服务</h4><p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">createdb blog-db</div><div class="line"></div><div class="line">cd /usr/share/www</div><div class="line">. venv/bin/activate</div><div class="line">python manage.py db upgrade</div><div class="line"></div><div class="line">deactivate</div><div class="line">sudo service blog restart</div></pre></td></tr></table></figure></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/kuberbets/">kuberbets</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <!--
+		<p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+		-->
+		<!-- 自定义链接 -->
+		<!--
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+		-->
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/05/2017',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
