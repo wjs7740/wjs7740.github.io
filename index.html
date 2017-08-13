@@ -1,351 +1,1348 @@
-<!DOCTYPE HTML>
-<html class="no-js" lang="zh-CN">
-<!--
-//                            _ooOoo_
-//                           o8888888o
-//                           88" . "88
-//                           (| -_- |)
-//                            O\ = /O
-//                        ____/`---'\____
-//                      .   ' \\| |// `.
-//                       / \\||| : |||// \
-//                     / _||||| -:- |||||- \
-//                       | | \\\ - /// | |
-//                     | \_| ''\---/'' | |
-//                      \ .-\__ `-` ___/-. /
-//                   ___`. .' /--.--\ `. . __
-//                ."" '< `.___\_<|>_/___.' >'"".
-//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
-//                 \ \ `-. \_ __\ /__ _/ .-` / /
-//         ======`-.____`-.___\_____/___.-`____.-'======
-//                            `=---='
-//                 拦截插件累计拦截逗比攻击"1381438"次！
-//         .............................................
-//                  佛祖保佑             永无BUG
-//          佛曰:
-//                  写字楼里写字间，写字间里程序员；
-//                  程序人员写程序，又拿程序换酒钱。
-//                  酒醒只在网上坐，酒醉还来网下眠；
-//                  酒醉酒醒日复日，网上网下年复年。
-//                  但愿老死电脑间，不愿鞠躬老板前；
-//                  奔驰宝马贵者趣，公交自行程序员。
-//                  别人笑我忒疯癫，我笑自己命太贱；
-//                  不见满街漂亮妹，哪个归得程序员？
--->
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
-    <!--[if lte IE 9]>
-<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
-<![endif]-->
-<meta charset="utf-8">
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
-<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-<meta name="renderer" content="webkit">
-<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
-<meta name="author" content="Jason Wang">
-<link rel="stylesheet" href="/css/SimpleStyle.css">
-
-<link rel="shortcut icon" href="/images/favicon.png">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
-<title>Jason Say</title>
 
-<meta name="keywords" content="">
 
-<meta name="description " content="">
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Jason写字的地方">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jason Say">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Jason Say">
+<meta property="og:description" content="Jason写字的地方">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jason Say">
+<meta name="twitter:description" content="Jason写字的地方">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Jason Say</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
-<body>
-<div id="nav">
-    <nav class="nav-menu">
-        <a class="site-name current" href="/" title="JSay">JSay</a>
-		<!--<a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a> -->
-		<a class="site-name" href="/categories/java" title="Java">Java</a>
-		<a class="site-name" href="/categories/python" title="Python">Python</a>
-		<a class="site-name" href="/categories/docker" title="容器云">容器云</a>
-		<a class="site-name" href="/categories/books" title="读的书">读的书</a>
-		<a class="site-name" href="/categories/travel" title="去的地方">去的地方</a>
-		<a class="site-name" href="/categories/lovers" title="爱的人">爱的人</a>
-		<a class="site-name" href="/about" title="关于我">关于我</a>
-    </nav>
-</div>
-<div class="nav-user">
-    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
-    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
-    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
-</div>
-<div id="wrapper" class="clearfix">
-    <div id="body">
-        <div class="main" id="main">
-            <div id="cover">
-    <div class="cover-img"></div>
-    <div class="cover-info">
-        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
-        <h1>Jason Say</h1>
-        <h3>不积跬步 无以至千里</h3>
-        <p></p>
-        <div class="cover-sns">
-            <div class="btn btn-slack">
-                <a href="" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
-            </div>
-            <div class="btn btn-weibo">
-                <a href="" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
-            </div>
-            <div class="btn btn-facebook">
-                <a href=""  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
-            </div>
-            <div class="btn btn-github">
-                <a href="https://github.com/wjs7740"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-            <div class="page-title">
-    <ul>
-        <li class="active">
-            <a href="/" data-name="最近文章">最近</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/../archives" data-name="归档">归档</a>
-        </li>
-        
-        
-        <li class="page-search">
-    <form id="search" class="search-form">
-        <label for="s" class="sr-only">Input Search key Words Here</label>
-        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
-        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-</li>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jason Say</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-docker">
+          <a href="/docker/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            容器云
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-java">
+          <a href="/java/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Java
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-python">
+          <a href="/python/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Python
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            看的书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-travel">
+          <a href="/travel/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            去的地方
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lovers">
+          <a href="/lovers/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            爱的人
+          </a>
+        </li>
+      
+
+      
     </ul>
-</div>
-<div class="main-inner">
-    
-    <!-- 首页默认取最最新文章集 -->
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-08-07
-        </div>
-        <a class="post-title" href="/2017/08/07/java实现kubernates-API的访问调用/" target="_blank" title="java实现kubernates API的访问调用">java实现kubernates API的访问调用</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kuberbets/" target="_blank">kuberbets</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/java/" target="_blank">java</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        java实现kubernates API的访问调用
-    </div>
-</article>
+  <section id="posts" class="posts-expand">
+    
+      
 
+  
 
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/java实现kubernates-API的访问调用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Say">
+    </span>
 
     
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-08-07
-        </div>
-        <a class="post-title" href="/2017/08/07/用python 分析微信好友信息并生成词云/" target="_blank" title="用python 分析微信好友信息并生成词云">用python 分析微信好友信息并生成词云</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/python/" target="_blank">python</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/微信/" target="_blank">微信</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/爬虫/" target="_blank">爬虫</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        用python 分析微信好友信息并生成词云
-    </div>
-</article>
+      <header class="post-header">
 
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-07-07
-        </div>
-        <a class="post-title" href="/2017/07/07/flask 应用的架构和部署(flask+gunicorn+nginx)/" target="_blank" title="flask 应用的架构和部署(flask+gunicorn+nginx)">flask 应用的架构和部署(flask+gunicorn+nginx)</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kuberbets/" target="_blank">kuberbets</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        flask 应用的架构和部署(flask+gunicorn+nginx)
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-07-05
-        </div>
-        <a class="post-title" href="/2017/07/05/如何运用docker配合python开发/" target="_blank" title="如何运用docker配合python开发">如何运用docker配合python开发</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kuberbets/" target="_blank">kuberbets</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/python/" target="_blank">python</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        如何运用docker配合python开发
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2016-01-05
-        </div>
-        <a class="post-title" href="/2016/01/05/java实现将多个文件打包成zip压缩文件以及对压缩文件的加密/" target="_blank" title="java实现将多个文件打包成zip压缩文件以及对压缩文件的加密">java实现将多个文件打包成zip压缩文件以及对压缩文件的加密</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/java/" target="_blank">java</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        java实现将多个文件打包成zip压缩文件以及对压缩文件的加密
-    </div>
-</article>
-
-
-
-    
-    
-</div>
-<!-- 分页开始 -->
-
-
-        </div><!-- end #main-->
-    </div><!-- end #body -->
-    <footer class="footer">
-    <div class="footer-inner">
-        <!--
-		<p>
-            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-		-->
-		<!-- 自定义链接 -->
-		<!--
-            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
-            <a href="/app" title="App下载">App下载</a>
-        </p>
-		-->
-        <p>
-            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
-            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
-            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
-        </p>
         
-    </div>
-</footer>
-<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-<script src="/js/InsightSearch.js"></script>
-<script src="/js/SimpleCore.js"></script>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/07/java实现kubernates-API的访问调用/" itemprop="url">java实现kubernates API的访问调用</a></h1>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T09:44:33+08:00">
+                2017-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>kubernetes及各开源社区为开发人员提供了各种语言版的Client Library，让我们可以通过编程的方式可以实现调用Kubernetes API，从而完成pod、service、RC等资源的图形化创建和管理。本篇主要介绍使用java语言的实现</p>
+<h3 id="2-使用场景"><a href="#2-使用场景" class="headerlink" title="2. 使用场景"></a>2. 使用场景</h3><p>开发基于kubernetes的容器云管理平台</p>
+<h3 id="3-基于的框架"><a href="#3-基于的框架" class="headerlink" title="3. 基于的框架"></a>3. 基于的框架</h3><p>用java语言开发的有两种，一个是基于Jersey的，一个是基于Fabric8。<br>    -Jersey是一个方便简化开发RESRFul Web Service的框架，契合kubernetesAPI的设计，所以采用jersey会比较省力，但还是需要开发者自己做很多工作。<br>    -Fabric8中的kubernates-client.xx.jar，kubernates-model.xx.jar等工具包包对kubernates api做了很好的封装，访问代码比较简单。<br>    本篇将选择fabric8实现</p>
+<h3 id="4-使用步骤"><a href="#4-使用步骤" class="headerlink" title="4. 使用步骤"></a>4. 使用步骤</h3><p>4.1 首先导入核心jar包<br><img src="http://img.blog.csdn.net/20170802112000624?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>4.2 创建连接API-Server的client<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div></pre></td><td class="code"><pre><div class="line">package org.demo.framework.engine.k8s.util;</div><div class="line"></div><div class="line">import io.fabric8.kubernetes.api.model.*;</div><div class="line">import io.fabric8.kubernetes.api.model.extensions.*;</div><div class="line">import io.fabric8.kubernetes.api.model.extensions.Deployment;</div><div class="line">import io.fabric8.kubernetes.client.Config;</div><div class="line">import io.fabric8.kubernetes.client.ConfigBuilder;</div><div class="line">import io.fabric8.kubernetes.client.*;</div><div class="line">import okhttp3.TlsVersion;</div><div class="line">import org.apache.log4j.Logger;</div><div class="line"></div><div class="line">import java.io.Closeable;</div><div class="line">import java.util.ArrayList;</div><div class="line">import java.util.LinkedList;</div><div class="line">import java.util.List;</div><div class="line">import java.util.Map;</div><div class="line"></div><div class="line">public class Fabric8KubeUtils implements KubeUtils&lt;KubernetesClient&gt; &#123;</div><div class="line">    private KubernetesClient client;</div><div class="line">    private static final int CONNECTION_TIMEOUT = 3 * 1000;</div><div class="line">    private static final int REQUEST_TIMEOUT = 3 * 1000;</div><div class="line">    </div><div class="line">    private static Logger logger = Logger.getLogger(Fabric8KubeUtils.class);</div><div class="line"></div><div class="line"></div><div class="line">    @Override</div><div class="line">    public KubernetesClient getClient() &#123;</div><div class="line">        return client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void setClient(KubernetesClient client) &#123;</div><div class="line">        this.client = client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    private Fabric8KubeUtils(KubernetesClient client) &#123;</div><div class="line">        this.client = client;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    </div><div class="line">	/**传入参数，连接k8s的api server**/</div><div class="line">    public static KubeUtils buildKubeUtils(Cluster cluster, String namespace) throws K8sDriverException &#123;</div><div class="line">        if (cluster == null) &#123;</div><div class="line">            throw new K8sDriverException(&quot;cluster is null&quot;);</div><div class="line">        &#125;</div><div class="line">        String key = cluster.md5Key(namespace);</div><div class="line">        if (KUBEUTILSMAP.containsKey(key)) &#123;</div><div class="line">            return KUBEUTILSMAP.get(key);</div><div class="line">        &#125;</div><div class="line">        String master = cluster.getApi();</div><div class="line">        master = CommonUtil.fullUrl(master);</div><div class="line">        if (StringUtils.isBlank(master)) &#123;</div><div class="line">            throw new K8sDriverException(&quot;master api is null, cluster id=&quot; + cluster.getId() + &quot;, cluster name=&quot; + cluster.getName());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Config config;</div><div class="line">        if (master.toLowerCase().startsWith(&quot;https://&quot;)) &#123;</div><div class="line">            config = new ConfigBuilder().withMasterUrl(master)</div><div class="line">                    .withTrustCerts(true)</div><div class="line">                    .withNamespace(namespace)</div><div class="line">                    .withOauthToken(cluster.getOauthToken())</div><div class="line">                    .withUsername(cluster.getUsername())</div><div class="line">                    .withPassword(cluster.getPassword())</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_0)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_1)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_2)</div><div class="line">                    .withRequestTimeout(REQUEST_TIMEOUT)</div><div class="line">                    .withConnectionTimeout(CONNECTION_TIMEOUT)</div><div class="line">                    .build();</div><div class="line">        &#125; else &#123;</div><div class="line">            config = new ConfigBuilder().withMasterUrl(master)</div><div class="line">                    .withNamespace(namespace)</div><div class="line">                    .withOauthToken(cluster.getOauthToken())</div><div class="line">                    .withUsername(cluster.getUsername())</div><div class="line">                    .withPassword(cluster.getPassword())</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_0)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_1)</div><div class="line">                    .removeFromTlsVersions(TlsVersion.TLS_1_2)</div><div class="line">                    .withTrustCerts(true)</div><div class="line">                    .withRequestTimeout(REQUEST_TIMEOUT)</div><div class="line">                    .withConnectionTimeout(CONNECTION_TIMEOUT)</div><div class="line">                    .build();</div><div class="line">        &#125;</div><div class="line">        KubeUtils kubeUtils = buildKubeUtils(config);</div><div class="line">        KUBEUTILSMAP.putIfAbsent(key, kubeUtils);</div><div class="line">        return kubeUtils;</div><div class="line">    &#125;</div><div class="line">	</div><div class="line">	/**创建client**/</div><div class="line">    public static KubeUtils buildKubeUtils(Config config) throws K8sDriverException &#123;</div><div class="line">        KubernetesClient client;</div><div class="line">        try &#123;</div><div class="line">            client = new DefaultKubernetesClient(config);</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            throw new K8sDriverException(&quot;instantialize kubernetes client error&quot;);</div><div class="line">        &#125;</div><div class="line">        return new Fabric8KubeUtils(client);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">          </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.3 创建k8s的资源对象，作为参传给client操作k8s（增删改时需要）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 可以通过k8s??Builder()来创建资源对象</div><div class="line">// 如下创建一个service对象，lb为包含service必要信息的实体类对象</div><div class="line">Service newService = new K8sServiceBuilder(lb).build();</div></pre></td></tr></table></figure></p>
+<p>4.4 通过得到的client，可以对k8s的各种资源增删改查各种操作：<br>Nodes<br>Namespaces<br>Services<br>Replicationcontrollers<br>Pods<br>Deployments<br>Resourcequotas<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line">/**创建pod**/</div><div class="line">@Override</div><div class="line">    public Pod createPod(Pod pod)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">        logger.debug(&quot;create pod with specify=&quot; + pod.toString());</div><div class="line">        try &#123;</div><div class="line">            return client.pods().create(pod);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">/**创建service**/</div><div class="line">@Override</div><div class="line">public Service createService(Service service)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">    logger.debug(&quot;create service=&quot; + service);</div><div class="line">    if (service == null) &#123;</div><div class="line">         return null;</div><div class="line">    &#125;</div><div class="line">    try &#123;</div><div class="line">         return client.services().create(service);</div><div class="line">    &#125; catch (KubernetesClientException e) &#123;</div><div class="line">        throw new K8sDriverException(e.getMessage());</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/**创建RC**/</div><div class="line"> @Override</div><div class="line">    public ReplicationController createReplicationController(ReplicationController rc)</div><div class="line">            throws K8sDriverException &#123;</div><div class="line">        if (rc == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create replication controller with rc=\n&quot; + rc);</div><div class="line">        try &#123;</div><div class="line">            return client.replicationControllers().create(rc);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">/**创建deployment**/</div><div class="line">@Override</div><div class="line">    public Deployment createDeployment(Deployment deployment) throws K8sDriverException &#123;</div><div class="line">        if (deployment == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create deployment with deployment=\n&quot; + deployment);</div><div class="line">        try &#123;</div><div class="line">            return client.extensions().deployments().create(deployment);</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">/**按条件列出所有node**/</div><div class="line">@Override</div><div class="line">    public NodeList listNode(Map&lt;String, String&gt; labelSelector) throws K8sDriverException &#123;</div><div class="line">        logger.debug(&quot;list node with selector=&quot; + labelSelector);</div><div class="line">        try &#123;</div><div class="line">            return client.nodes().withLabels(labelSelector).list();</div><div class="line">        &#125; catch (KubernetesClientException e) &#123;</div><div class="line">            throw new K8sDriverException(e.getMessage());</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/用python 分析微信好友信息并生成词云/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Say">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/07/用python 分析微信好友信息并生成词云/" itemprop="url">用python 分析微信好友信息并生成词云</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T09:24:33+08:00">
+                2017-08-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在知乎上偶然看到有人推荐itchart这个微信接口，抱着好奇的想法尝试了以下，果然非常好玩。<br>官方链接：<a href="http://itchat.readthedocs.io/zh/latest/#itchat" target="_blank" rel="external">http://itchat.readthedocs.io/zh/latest/#itchat</a></p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="http://img.blog.csdn.net/20170725173605622?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>get_info.py这个类用来爬取好友信息并保存到指定文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">import itchat</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_path = basepath+&apos;\downloads&apos;+ &apos;\\&apos;</div><div class="line"></div><div class="line"># 调用itchat接口登录并拉取数据</div><div class="line">itchat.login()</div><div class="line">friends = itchat.get_friends(update=True)[0:]</div><div class="line"></div><div class="line">fmt=&apos;%Y%m%d%H%M%S&apos;      #定义时间显示格式</div><div class="line">Date=time.strftime(fmt,time.localtime(time.time()))</div><div class="line"></div><div class="line">download_file_name = &apos;friendslist_&apos;+friends[0][&apos;NickName&apos;]+ &apos;_&apos; + Date + &apos;.txt&apos;</div><div class="line"></div><div class="line">f = open(download_path+download_file_name,&apos;wb&apos;)</div><div class="line">print(download_path+download_file_name)</div><div class="line"></div><div class="line">for i in friends[1:]:</div><div class="line">    friend = (str(i) + &quot;\n&quot;).encode(encoding=&apos;gb18030&apos;)</div><div class="line">    # print(str(i))</div><div class="line">    f.write(friend)</div><div class="line"></div><div class="line">f.close()</div></pre></td></tr></table></figure></p>
+<p>analyse.py这个类根据下载的好友数据分析好友信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"># Author:Jason.wang</div><div class="line"></div><div class="line">import re</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">base_pic = &quot;C:/Users/Think/Pictures/Saved Pictures/beb28c538ac52a91.jpg&quot;</div><div class="line">source_file = &quot;friendslist_雨佳Clara_20170724223344.txt&quot;</div><div class="line">source_file = &quot;friendslist_say_20170724132202.txt&quot;</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_file = basepath+&apos;\downloads\\&apos;+ source_file</div><div class="line"></div><div class="line">fs_str = &apos;&apos;</div><div class="line">with open(download_file,&apos;rb&apos;) as f:</div><div class="line">    fs_str = f.read().decode(&apos;gb18030&apos;)</div><div class="line"></div><div class="line">friends = fs_str.split(&apos;\n&apos;)</div><div class="line"></div><div class="line"># 初始化计数器 </div><div class="line">male = female = other = 0</div><div class="line"># 所有省份</div><div class="line">Provinces_list = []</div><div class="line">#friends[0]是自己的信息，所以要从friends[1]开始 </div><div class="line">for i in friends:</div><div class="line">    if i.__len__()&gt;0:</div><div class="line">        i = i.replace(&apos;&lt;ContactList: [&apos;,&apos;&quot;&lt;ContactList: [&apos;)</div><div class="line">        i = i.replace(&apos;]&gt;&apos;,&apos;]&gt;&quot;&apos;)</div><div class="line">        friend = eval(i)</div><div class="line"></div><div class="line">        # 统计性别</div><div class="line">        sex = friend[&quot;Sex&quot;]</div><div class="line">        if sex == 1:</div><div class="line">            male += 1</div><div class="line">            exit</div><div class="line">        elif sex ==2:</div><div class="line">            female += 1</div><div class="line">        else:</div><div class="line">            other+=1</div><div class="line"></div><div class="line">        # 统计地区</div><div class="line">        Province = friend[&quot;Province&quot;]</div><div class="line">        Provinces_list.append(Province)</div><div class="line"></div><div class="line"></div><div class="line">#计算朋友总数 </div><div class="line">total = len(friends)</div><div class="line">#打印出自己的好友性别比例 </div><div class="line">print(&quot;总好友数：  %d&quot; % total + &quot;\n&quot; +</div><div class="line">    &quot;男性好友：  %d 个,占比 %.2f%%&quot; % (male,(float(male)/total*100)) + &quot;\n&quot; +</div><div class="line">      &quot;女性好友：  %d 个,占比 %.2f%%&quot; % (female,(float(female) / total * 100)) + &quot;\n&quot; +</div><div class="line">      &quot;不明性别好友：  %d 个,占比 %.2f%%&quot; % (other,(float(other) / total * 100)))</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">Provinces_set = set(Provinces_list)</div><div class="line">Provinces_dict = &#123;&#125;</div><div class="line">for i in Provinces_set:</div><div class="line">    Provinces_dict[i] = Provinces_list.count(i)</div><div class="line"># 对省份字典按value排序</div><div class="line">Provinces_dict = sorted(Provinces_dict.items(),key=lambda asd:asd[1],reverse=True)</div><div class="line"></div><div class="line">print(&quot;===============人数排名前10地区如下==================&quot;)</div><div class="line">top = 0</div><div class="line">for k,v in Provinces_dict:</div><div class="line">    if top&lt;10:</div><div class="line">        print(&quot;%s : %d 个，占比 ： %.2f%%&quot; % (k,v,float(v)/total*100))</div><div class="line">    top+=1</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><img src="http://img.blog.csdn.net/20170725174056265?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>ciyun.py根据签名生成词云<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"># -*- coding:UTF-8 -*-</div><div class="line"># Author:Jason.wang</div><div class="line">import re</div><div class="line">import os</div><div class="line">import time</div><div class="line"></div><div class="line">base_pic = &quot;C:/Users/Think/Pictures/Saved Pictures/beb28c538ac52a91.jpg&quot;</div><div class="line">source_file = &quot;friendslist_雨佳Clara_20170724223344.txt&quot;</div><div class="line"># source_file = &quot;friendslist_say_20170724132202.txt&quot;</div><div class="line"></div><div class="line">basepath = os.path.dirname(os.path.realpath(__file__))</div><div class="line">download_file = basepath+&apos;\downloads\\&apos;+ source_file</div><div class="line"></div><div class="line">fs_str = &apos;&apos;</div><div class="line">with open(download_file,&apos;rb&apos;) as f:</div><div class="line">    fs_str = f.read().decode(&apos;gb18030&apos;)</div><div class="line"></div><div class="line">friends = fs_str.split(&apos;\n&apos;)</div><div class="line"></div><div class="line"></div><div class="line">siglist = []</div><div class="line">for i in friends:</div><div class="line">    if i.__len__()&gt;0:</div><div class="line">        i = i.replace(&apos;&lt;ContactList: [&apos;,&apos;&quot;&lt;ContactList: [&apos;)</div><div class="line">        i = i.replace(&apos;]&gt;&apos;,&apos;]&gt;&quot;&apos;)</div><div class="line">        friend = eval(i)</div><div class="line">        # print(friend)</div><div class="line">        # print(friend[&quot;Signature&quot;])</div><div class="line">        signature = friend[&quot;Signature&quot;].strip().replace(&quot;span&quot;,&quot;&quot;).replace(&quot;class&quot;,&quot;&quot;).replace(&quot;emoji&quot;,&quot;&quot;)</div><div class="line">        rep = re.compile(&quot;1f\d+\w*|[&lt;&gt;/=]&quot;)</div><div class="line">        signature = rep.sub(&quot;&quot;,signature)</div><div class="line">        siglist.append(signature)</div><div class="line">text = &quot;&quot;.join(siglist)</div><div class="line"></div><div class="line">import jieba</div><div class="line">wordlist = jieba.cut(text,cut_all=True)</div><div class="line">word_space_split = &quot; &quot;.join(wordlist).replace(&quot;\n&quot;,&quot;&quot;)</div><div class="line"></div><div class="line">print(word_space_split)</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">import matplotlib.pyplot as plt</div><div class="line">from wordcloud import WordCloud, ImageColorGenerator</div><div class="line">import numpy as np</div><div class="line">import PIL.Image as Image</div><div class="line"></div><div class="line">coloring = np.array(Image.open(base_pic))</div><div class="line">my_wordcloud = WordCloud(background_color=&quot;white&quot;,max_words=2000,</div><div class="line">                         mask=coloring,max_font_size=60,random_state=42,scale=2,</div><div class="line">                        font_path=&quot;C:/windows/fonts/SimHei.ttf&quot;).generate(word_space_split)</div><div class="line"></div><div class="line">image_colors = ImageColorGenerator(coloring)</div><div class="line">plt.imshow(my_wordcloud.recolor(color_func=image_colors))</div><div class="line">plt.imshow(my_wordcloud)</div><div class="line">plt.axis(&quot;off&quot;)</div><div class="line">plt.show()</div></pre></td></tr></table></figure></p>
+<p>效果：<br><img src="http://img.blog.csdn.net/20170725174447983?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/07/flask 应用的架构和部署(flask+gunicorn+nginx)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Say">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/07/flask 应用的架构和部署(flask+gunicorn+nginx)/" itemprop="url">flask 应用的架构和部署(flask+gunicorn+nginx)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T09:44:33+08:00">
+                2017-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本文主要介绍flask+gunicorn+nginx的配合部署过程，它只是入门的部署过程，当你的web应用有并发要求时，还应加上缓存和队列调度等等，这部分可以参考<a href="https://zhuanlan.zhihu.com/p/25038203" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/25038203</a></p>
+<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><blockquote>
+<p><strong>1.为什么要使用gunicorn？</strong><br>目前我们使用flask内建的wsgi server，这个server由于是单进程单线程模型的，所以性能很差，一个请求不处理完的话服务器就会阻塞住其他请求，我们需要对这个server做替换。<br>而gunicorn是一个python编写的高效的WSGI HTTP服务器，它比uwsgi使用更简单<br><strong>2.为什么需要nginx？</strong><br>nginx反向代理能带给我们很多好处：</p>
+<ul>
+<li>负载均衡，把请求平均地分到上游的app server进程。</li>
+<li>静态文件处理，静态文件的访问交给nginx来处理，降低了app server的压力。</li>
+<li>接收完客户端所有的TCP包，再一次交给上游的应用来处理，防止app server被慢请求干扰。</li>
+<li>访问控制和路由重写。</li>
+<li>强大的ngx_lua模块。</li>
+<li>Proxy cache。</li>
+<li>Gzip，SSL…</li>
+</ul>
+</blockquote>
+<h3 id="应用架构"><a href="#应用架构" class="headerlink" title="应用架构:"></a>应用架构:</h3><p><img src="http://img.blog.csdn.net/20170707110113026?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="部署步骤："><a href="#部署步骤：" class="headerlink" title="部署步骤："></a>部署步骤：</h3><p><img src="http://img.blog.csdn.net/20170707103905414?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="1-wsgi"><a href="#1-wsgi" class="headerlink" title="1. wsgi"></a>1. wsgi</h4><p>项目中创建wsgi.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from app import create_app</div><div class="line">application = create_app(&apos;production&apos;)</div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">	application.run()</div></pre></td></tr></table></figure></p>
+<h4 id="2-远程复制scp"><a href="#2-远程复制scp" class="headerlink" title="2.远程复制scp"></a>2.远程复制scp</h4><p>远程复制项目文件到服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 在本地目录内执行</div><div class="line">scp -r app jason@10.222.32.10:/usr/share/www</div></pre></td></tr></table></figure></p>
+<h4 id="3-安装各种环境和依赖包并测试gunicorn服务"><a href="#3-安装各种环境和依赖包并测试gunicorn服务" class="headerlink" title="3.安装各种环境和依赖包并测试gunicorn服务"></a>3.安装各种环境和依赖包并测试gunicorn服务</h4><p>在服务器上执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 安装venv环境</div><div class="line">virtualenv venv</div><div class="line">. venv/bin/activate</div><div class="line"># 安装依赖包</div><div class="line">pip install -r requirements.txt</div><div class="line">#安装gunicorn</div><div class="line">pip install gunicorn</div><div class="line"># 测试运行服务</div><div class="line">gunicorn -w 4 -b 127.0.0.1:8000 wsgi:application</div><div class="line"># 解释</div><div class="line">-w ：要开多少个worker，即开启几个进程</div><div class="line">-b ：指定host地址</div><div class="line">wsgi: ：声明入口wsgi文件中的全局变量</div></pre></td></tr></table></figure></p>
+<h4 id="4-配置upstart"><a href="#4-配置upstart" class="headerlink" title="4.配置upstart"></a>4.配置upstart</h4><p>在linux启动时就跟随启动起来<br>在项目中编写upstart.conf并复制到服务器命名为blog.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">description &quot;My Blog service&quot;</div><div class="line"># 运行级别</div><div class="line">start on runlevel [2345]</div><div class="line">stop on runlevel [!2345]</div><div class="line"># 用户id和用户组</div><div class="line">respawn</div><div class="line">setuid root</div><div class="line">setgid www-data</div><div class="line"># 运行路径和服务运行时的工作目录</div><div class="line">env PATH=/usr/share/www/venv/bin</div><div class="line">chdir /usr/share/www/</div><div class="line"></div><div class="line">exec gunicorn -w 4 -b 127.0.0.1:8000 wsgi:application</div></pre></td></tr></table></figure></p>
+<p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 建立服务目录配置</div><div class="line">sudo nano /etc/init/blog.conf</div><div class="line"># 测试建立的文件</div><div class="line">deactivate</div><div class="line"># 开启服务</div><div class="line">sudo service blog start</div></pre></td></tr></table></figure></p>
+<h4 id="5-配置nginx（反向代理）"><a href="#5-配置nginx（反向代理）" class="headerlink" title="5. 配置nginx（反向代理）"></a>5. 配置nginx（反向代理）</h4><p>在项目中编写nginx.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># /ect/nginx/sites-available/default</div><div class="line"></div><div class="line">server &#123;</div><div class="line">    listen 80;</div><div class="line">    server_name 10.211.55.10;</div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">	    # 要和gunicorn配置的host地址对应上</div><div class="line">        proxy_pass http://127.0.0.1:8000;</div><div class="line">        proxy_set_header Host $host;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">    &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 进入nginx默认配置文件</div><div class="line">sudo nano /ect/nginx/sites-available/default</div><div class="line"># 将server&#123;&#125;中的内容替换为上面写的内容</div><div class="line"># 重启nginx</div><div class="line">sudo service nginx restart</div></pre></td></tr></table></figure></p>
+<h4 id="6-初始化数据库并重启服务"><a href="#6-初始化数据库并重启服务" class="headerlink" title="6. 初始化数据库并重启服务"></a>6. 初始化数据库并重启服务</h4><p>在服务器端<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">createdb blog-db</div><div class="line"></div><div class="line">cd /usr/share/www</div><div class="line">. venv/bin/activate</div><div class="line">python manage.py db upgrade</div><div class="line"></div><div class="line">deactivate</div><div class="line">sudo service blog restart</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/05/如何运用docker配合python开发/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Say">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/05/如何运用docker配合python开发/" itemprop="url">如何运用docker配合python开发</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-05T09:44:33+08:00">
+                2017-07-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由于开发一个python程序时需要依赖大量的三方库包，且python2和3本身就有互不兼容的地方，我们往往需要一个隔离的环境，来避免版本影响造成的bug。<br>传统的做法大多数人可能会选择virtualenv来隔离，但是它有很多明显的缺点：</p>
+<ul>
+<li>无法提供完全的隔离</li>
+<li>如果不想在正式环境中使用，它就会造成差异</li>
+</ul>
+<blockquote>
+<p>而随着容器技术的日渐成熟和普及，Docker无疑成为解决这个问题的最优解<br>本文将主要介绍docker和flask的配合开发</p>
+</blockquote>
+<h2 id="步骤："><a href="#步骤：" class="headerlink" title="步骤："></a>步骤：</h2><h4 id="1-安装Docker（这里不详细介绍）"><a href="#1-安装Docker（这里不详细介绍）" class="headerlink" title="1.安装Docker（这里不详细介绍）"></a>1.安装Docker（这里不详细介绍）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 参考命令</div><div class="line">sudo wget -qO- https://get.docker.com/ | sh</div></pre></td></tr></table></figure>
+<h4 id="2-应用目录结构"><a href="#2-应用目录结构" class="headerlink" title="2.应用目录结构"></a>2.应用目录结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">├──fanxiangce</div><div class="line">_docker</div><div class="line">	├── Dockerfile</div><div class="line">	├── Readme.md </div><div class="line">	└─fanxiangce</div><div class="line">		└──app</div><div class="line">		├── manage.py 						</div><div class="line">	        └── requirements</div><div class="line">			├── common.txt</div></pre></td></tr></table></figure>
+<h4 id="3-编写Dockerfile（详细命令解释可以参考https-docs-docker-com-engine-reference-builder-environment-replacement）"><a href="#3-编写Dockerfile（详细命令解释可以参考https-docs-docker-com-engine-reference-builder-environment-replacement）" class="headerlink" title="3.编写Dockerfile（详细命令解释可以参考https://docs.docker.com/engine/reference/builder/#environment-replacement）"></a>3.编写Dockerfile（详细命令解释可以参考<a href="https://docs.docker.com/engine/reference/builder/#environment-replacement）" target="_blank" rel="external">https://docs.docker.com/engine/reference/builder/#environment-replacement）</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">########################################################## </div><div class="line"># Dockerfile to run a flask-based web application# Based on an centos:7 image </div><div class="line">##########################################################</div><div class="line"># Set the base image to use to centos </div><div class="line">FROM centos:7</div><div class="line"></div><div class="line"># Set the file maintainer </div><div class="line">MAINTAINER jasonwang,wjs7740@163.com</div><div class="line"></div><div class="line"># Set env varibles used in this Dockerfile (add a unique prefix, such as DOCKYARD) </div><div class="line"># Local directory with project source </div><div class="line">ENV DOCKYARD_SRC=fanxiangce</div><div class="line"></div><div class="line"># Directory in Container for all project files </div><div class="line">ENV DOCKYARD_SRCHOME=/opt </div><div class="line"># Directory in container for project source files </div><div class="line">ENV DOCKYARD_SRCPROJ=/opt/fanxiangce</div><div class="line"></div><div class="line"># Update the defualt application repository source list </div><div class="line">RUN yum -y install epel-release </div><div class="line">RUN yum -y install python-pip </div><div class="line">RUN yum clean all</div><div class="line"></div><div class="line"># Copy application source code to SRCDIR </div><div class="line">COPY $DOCKYARD_SRC $DOCKYARD_SRCPROJ</div><div class="line"></div><div class="line"># Create application subdirectories </div><div class="line">WORKDIR $DOCKYARD_SRCPROJ </div><div class="line">RUN mkdir log </div><div class="line">VOLUME [&apos;$DOCKYARD_SRCPROJ/log/&apos;]</div><div class="line"></div><div class="line"># Install Python dependencies </div><div class="line">RUN pip install --upgrade pip</div><div class="line">RUN pip install -r $DOCKYARD_SRCPROJ/requirements/common.txt</div><div class="line"></div><div class="line"># Port to expose </div><div class="line">EXPOSE 8000</div><div class="line"></div><div class="line"># Copy entrypoint script into the image </div><div class="line">WORKDIR $DOCKYARD_SRCPROJ</div></pre></td></tr></table></figure>
+<h4 id="4-build镜像"><a href="#4-build镜像" class="headerlink" title="4. build镜像"></a>4. build镜像</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 在Dockerfile同级目录下</div><div class="line">sudo docker build -t jason/webdemo .</div></pre></td></tr></table></figure>
+<p>成功后显示Successfully，同时返回镜像ID，如图：<br><img src="http://img.blog.csdn.net/20170705104738307?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="5-查看并启动镜像"><a href="#5-查看并启动镜像" class="headerlink" title="5.查看并启动镜像"></a>5.查看并启动镜像</h4><p>注意，此处-p映射的端口（主机端口：容器端口），容器端口应与flask应用定义的端口一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo docker images</div><div class="line">sudo docker run -it --name webdemo -p 8000:8000 jason/webdemo /bin/bash</div></pre></td></tr></table></figure></p>
+<h4 id="6-在容器中启动flask应用"><a href="#6-在容器中启动flask应用" class="headerlink" title="6.在容器中启动flask应用"></a>6.在容器中启动flask应用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python manage.py runserver -p 8000</div></pre></td></tr></table></figure>
+<p>启动成功如下截图：<br><img src="http://img.blog.csdn.net/20170705134954473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="7-在浏览器输入127-0-0-1-8000即可访问应用"><a href="#7-在浏览器输入127-0-0-1-8000即可访问应用" class="headerlink" title="7.在浏览器输入127.0.0.1:8000即可访问应用"></a>7.在浏览器输入127.0.0.1:8000即可访问应用</h4><p><img src="http://img.blog.csdn.net/20170705135327533?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h4 id="8-后续"><a href="#8-后续" class="headerlink" title="8.后续"></a>8.后续</h4><p>如果容器关闭后需要再次进入，可以用如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 查看当前容器 </div><div class="line">sudo docker ps -a</div><div class="line"># 启动容器</div><div class="line">docker start webdemo</div><div class="line"># 进入容器</div><div class="line">docker attach webdemo</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/01/05/java实现将多个文件打包成zip压缩文件以及对压缩文件的加密/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jason Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason Say">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/01/05/java实现将多个文件打包成zip压缩文件以及对压缩文件的加密/" itemprop="url">java实现将多个文件打包成zip压缩文件以及对压缩文件的加密</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-01-05T09:44:33+08:00">
+                2016-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如果仅仅需要对文件进行压缩，方法比较简单，因为java的util包中提供了相关的压缩方法.<br>首先，引入java.util.zip.ZipEntry,java.util.zip.ZipOutputStream包<br>然后加入以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">String now = StringUtils.dateToString(new Date());</div><div class="line">String path = request.getServletPath();</div><div class="line">path = request.getRealPath(path);</div><div class="line">path = path.substring(0,path.lastIndexOf(&quot;\\&quot;))+&quot;\\&quot;;</div><div class="line">File zipFile = new File(path+&quot;edm_expcsv\\&quot;+&quot;EDM_expcsv_&quot;+now+&quot;.zip&quot;); //压缩的文件名和地址 </div><div class="line">ZipOutputStream out2 = new ZipOutputStream(new FileOutputStream(zipFile));//传入压缩文件路径，得到压缩流</div><div class="line"> byte[] buffer = new byte[1024];</div><div class="line"> File[] file1 = &#123;new File(path+file),new File(path+file2)&#125;;</div><div class="line">for(int x=0;x&lt;file1.length;x++) &#123;</div><div class="line"> FileInputStream fis = new FileInputStream(file1[x]);</div><div class="line">out2.putNextEntry(new ZipEntry(file1[x].getName()));//将要压缩的文件放入压缩流</div><div class="line">  int len;</div><div class="line">//读入需要下载的文件的内容，打包到zip文件</div><div class="line">  while((len = fis.read(buffer))&gt;0) &#123;</div><div class="line"> out2.write(buffer,0,len);</div><div class="line">  &#125;</div><div class="line"> out2.closeEntry();</div><div class="line"> fis.close();</div><div class="line">&#125;</div><div class="line">out2.close();</div></pre></td></tr></table></figure></p>
+<p>如果是要对文件压缩并加密，则使用下面的方法，但是值支持单个文件压缩</p>
+<p>先将ant.jar commons-io.jar EncryptZip.jar EncryptZip.jar winzip.1.1.0.jar文件放到lib包中</p>
+<p>然后在头文件import中加入String,java.io.File,de.idyl.winzipaes.AesZipFileEncrypter,de.idyl.winzipaes.impl.AESEncrypterBC</p>
+<p>然后加入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">File file = newFile(s); //定义压缩文件的路径</div><div class="line">File zipFile = new File(b + &quot;\\demo.zip&quot;);//压缩的文件名和地址</div><div class="line">AESEncrypterBC bc = new AESEncrypterBC();</div><div class="line">AesZipFileEncrypter azfe = new AesZipFileEncrypter(zipFile, bc);</div><div class="line">azfe.setEncoding(&quot;UTF-8&quot;); // 编码格式是在这传进去的</div><div class="line">azfe.add(file,&quot;123.jpg&quot;, &quot;123&quot;); //1：要压缩的文件路径，2：为压缩的文件命名3：为密码</div><div class="line">azfe.close();</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Jason Wang" />
+          <p class="site-author-name" itemprop="name">Jason Wang</p>
+           
+              <p class="site-description motion-element" itemprop="description">Jason写字的地方</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Wang</span>
 </div>
-<div class="fixed-btn">
-    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
-<script>
-    $(function () {
-        SimpleCore.init({
-            buildingTime: '08/05/2017',
-            current: $('.post-tags').length > 0 ? 'post' : 'archive',
-            customImg: '/images/weixin-mp.png'
-        });
-    });
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
