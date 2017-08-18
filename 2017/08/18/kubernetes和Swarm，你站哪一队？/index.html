@@ -50,7 +50,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>java实现将多个文件打包成zip压缩文件以及对压缩文件的加密 - Jason Say</title>
+<title>kubernetes和swarm，你站哪一队？ - Jason Say</title>
 
 <meta name="keywords" content="">
 
@@ -158,21 +158,41 @@
                 </a>
                 <p><span class="label">作者</span>
                     <a href="" target="_blank"></a>
-                    <span title="最后编辑于2016-01-05">2016-01-05</span>
+                    <span title="最后编辑于2017-08-18">2017-08-18</span>
                 </p>
                 <p></p>
             </div>
-            <h2 class="post-title">java实现将多个文件打包成zip压缩文件以及对压缩文件的加密</h2>
+            <h2 class="post-title">kubernetes和Swarm，你站哪一队？</h2>
             <div class="post-meta">
-                本文总共1554个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共2196个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>如果仅仅需要对文件进行压缩，方法比较简单，因为java的util包中提供了相关的压缩方法.<br>首先，引入java.util.zip.ZipEntry,java.util.zip.ZipOutputStream包<br>然后加入以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">String now = StringUtils.dateToString(new Date());</div><div class="line">String path = request.getServletPath();</div><div class="line">path = request.getRealPath(path);</div><div class="line">path = path.substring(0,path.lastIndexOf(&quot;\\&quot;))+&quot;\\&quot;;</div><div class="line">File zipFile = new File(path+&quot;edm_expcsv\\&quot;+&quot;EDM_expcsv_&quot;+now+&quot;.zip&quot;); //压缩的文件名和地址 </div><div class="line">ZipOutputStream out2 = new ZipOutputStream(new FileOutputStream(zipFile));//传入压缩文件路径，得到压缩流</div><div class="line"> byte[] buffer = new byte[1024];</div><div class="line"> File[] file1 = &#123;new File(path+file),new File(path+file2)&#125;;</div><div class="line">for(int x=0;x&lt;file1.length;x++) &#123;</div><div class="line"> FileInputStream fis = new FileInputStream(file1[x]);</div><div class="line">out2.putNextEntry(new ZipEntry(file1[x].getName()));//将要压缩的文件放入压缩流</div><div class="line">  int len;</div><div class="line">//读入需要下载的文件的内容，打包到zip文件</div><div class="line">  while((len = fis.read(buffer))&gt;0) &#123;</div><div class="line"> out2.write(buffer,0,len);</div><div class="line">  &#125;</div><div class="line"> out2.closeEntry();</div><div class="line"> fis.close();</div><div class="line">&#125;</div><div class="line">out2.close();</div></pre></td></tr></table></figure></p>
-<p>如果是要对文件压缩并加密，则使用下面的方法，但是值支持单个文件压缩</p>
-<p>先将ant.jar commons-io.jar EncryptZip.jar EncryptZip.jar winzip.1.1.0.jar文件放到lib包中</p>
-<p>然后在头文件import中加入String,java.io.File,de.idyl.winzipaes.AesZipFileEncrypter,de.idyl.winzipaes.impl.AESEncrypterBC</p>
-<p>然后加入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">File file = newFile(s); //定义压缩文件的路径</div><div class="line">File zipFile = new File(b + &quot;\\demo.zip&quot;);//压缩的文件名和地址</div><div class="line">AESEncrypterBC bc = new AESEncrypterBC();</div><div class="line">AesZipFileEncrypter azfe = new AesZipFileEncrypter(zipFile, bc);</div><div class="line">azfe.setEncoding(&quot;UTF-8&quot;); // 编码格式是在这传进去的</div><div class="line">azfe.add(file,&quot;123.jpg&quot;, &quot;123&quot;); //1：要压缩的文件路径，2：为压缩的文件命名3：为密码</div><div class="line">azfe.close();</div></pre></td></tr></table></figure></p>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前几天阿里云的技术专家来我司介绍云计算相关产品，提到了关于容器编排技术的选择。由于阿里是Docker中国目前唯一代理，所以态度明确的表达大B企业应该使用dockerEE+Swarm。这也引起了我们新一轮的调研和考量（我们前期使用的是k8s）。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>当前主流的容器集群管理技术，包括了 Docker 官方的 Docker Swarm、Twitter 背书的 Mesos 和 Google 背书的 Kubernetes。由于Apache Mesos 只是一个分布式内核，目前的发展方向是数据中心操作系统（DCOS），它同时支持 Marathon、Kubernetes 和 Swarm 等多种框架，连 Mesosphere 也是 Kubernetes 生态的一员，从编排的角度，讨论 Mesos 意义不大，故而只对比 Docker Swarm 和 Kubernetes。</p>
+<h3 id="我个人的立场"><a href="#我个人的立场" class="headerlink" title="我个人的立场"></a>我个人的立场</h3><p>kubernetes是更为成熟的编排工具，有google背书，社区活跃明显超过Swarm，并且考虑到目前Docker公司和整个CaaS生态圈的关系，如果非要站队，我会选择Kubernetes</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>先上一张对比图（来自网易）<br><img src="http://img.blog.csdn.net/20170818111924642?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>可以看到，起码就目前而言，Swarm在各个方面都明显弱于K8S。<br>首先，K8S社区活跃度要明显高于Swarm，甚至不在一个量级，社区活跃并不是说当遇到问题是仰仗社区解决问题，而是说明有更多厂商企业使用，有更多的最佳实践经验可以借鉴。<br><img src="http://img.blog.csdn.net/20170818122416591?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170818122455425?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2pzNzc0MA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>其次，核心功能上Swarm也还缺少很多，虽然swarm肯定会后续不断完善，但那显然需要时间的检验。</p>
+<p>而swarm唯一的优势或许是集成在了Docker中，自然有利于开发者获得集群的能力，却也颠覆了系统级程序专注、松耦合的理念，新架构在生产环境中的稳定可靠，可能还需要更多的说服力。</p>
+<p>最后，Docker本身的发展和CaaS生态圈也是摩擦重重，出现了很多的槽点，比如：</p>
+<ul>
+<li>Docker向后兼容性问题</li>
+<li>Docker容器在某些生产环境运行不够稳定，在企业级方面还有待提高</li>
+<li>越过了操作系统的界限（Docker似乎不愿使用systemd，取而代之使用Docker Daemon来提供初始化，服务激活，安全和容器日志的相关功能）</li>
+</ul>
+<h3 id="如果甚至都不用Docker呢"><a href="#如果甚至都不用Docker呢" class="headerlink" title="如果甚至都不用Docker呢"></a>如果甚至都不用Docker呢</h3><p>我们很容易的想到，以Docker目前的发展态势来说，一旦docker和google等巨头闹翻，那基于k8s+docker来做的系统就没法使用了吗？</p>
+<p>我觉得也并不是。</p>
+<p>首先，我们最简单的方式，或许是不升级新的docker版本，最多就是后续问题不在有docker官方支持。但我相信这么多企业在用k8s，到时候google或者其他大厂、社区必定会有相应解决方案。</p>
+<p>而且google等厂商也已经准备了应对之策，那就是在CaaS中废弃Docker，对容器进行抽象，用谁的容器都可以。<br><strong>容器运行时不再用Docker，而直接采用RunC，容器扩展功能通过插件来实现，基本就是全抛弃Docker了。</strong><br>目前RunC是三大容器厂商共同支持的标准：CoreOS Rocket, Cloud Foundry Garden和Docker容器。</p>
+<p>目前的形势，就形成了Docker和各个CaaS/PaaS厂商在同一层面竞争，在CaaS/PaaS平台，Docker并没有什么优势，但是Docker想把其容器的广泛使用的优势在CaaS中延续，目前看来并不容易。容器的主要用户还是个人用户、开发者用户、运维用户，而CaaS是企业系统，二者目标客户不同、技术要求不同。</p>
+<p>随着这个生态的演进，Docker容器会更多的用于开发、测试环境，而RunC在各个CaaS厂商的推动下会在生产环境得到广泛的应用。</p>
+<p>另外其实容器技术壁垒并不高，容器最主要的两个的技术来源：<br>1、 Namespace—来源于IBM<br>2、 cGroup—-来源于Google<br>其他的容器核心技术都是Linux操作系统的功能，容器的核心技术是和Linux操作系统密切相关的，Docker本身在容器核心并没有什么贡。<br>所以容器生态圈的公司撇开Docker做一个容器标准不是难事。</p>
+<p>作为用户或是容器生态圈的创业公司，不能一棵树上吊死，如果在容器层面只考虑Docker，而不考虑RunC，可能会和CaaS/PaaS生态圈的标准越来越远，未来和CaaS/PaaS的标准容器差异越来越大，主流的CaaS/PaaS厂商和技术，如K8s/Mesos/Cloud Foundry均不再支持Docker容器超越RunC之外的功能，而只支持插件对RunC功能的扩展。</p>
+<p>业界更普遍的定位是Docker用于开发测试环境，而RunC用于生产环境，所以对于要在生产环境采用容器技术的，一定要研究RunC。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>对于企业来说，目前使用Kubernetes+Docker或许是最好的选择，而未来的方向应该是转向Kubenetes+RunC。<br>而到时候转换的成本其实也不用担心，其实现在已经有Docker镜像转为RunC镜像的方式了（Riddler）</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://tech.china.com/article/20161213/201612139121.html" target="_blank" rel="external">http://tech.china.com/article/20161213/201612139121.html</a><br><a href="http://www.weixinnu.com/tag/article/2817098942" target="_blank" rel="external">http://www.weixinnu.com/tag/article/2817098942</a><br><a href="https://blog.c.163.com/2016/11/735/" target="_blank" rel="external">https://blog.c.163.com/2016/11/735/</a></p>
 
         </div>
         <div class="post-tool">
@@ -183,7 +203,9 @@
         
         <div class="post-tags">Tags：
             
-            <a href="/tags/java/">java</a>
+            <a href="/tags/kubernetes/">kubernetes</a>
+            
+            <a href="/tags/python/">python</a>
             
         </div>
         
