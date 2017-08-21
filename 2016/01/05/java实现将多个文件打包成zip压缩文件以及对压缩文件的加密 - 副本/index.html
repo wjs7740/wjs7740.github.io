@@ -50,7 +50,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>分类 - docker - Jason Say</title>
+<title>java实现将多个文件打包成zip压缩文件以及对压缩文件的加密 - Jason Say</title>
 
 <meta name="keywords" content="">
 
@@ -103,13 +103,13 @@
 </div>
             <div class="page-title">
     <ul>
-        <li class="">
-            <a href="/" data-name="最近文章">最近</a>
-        </li>
+        <li><a href="/">最新</a></li>
         
-        <li class="">
-            <a href="/categories/../archives" data-name="归档">归档</a>
-        </li>
+            
+                <li class="">
+                    <a href="/categories/../archives" data-name="归档">归档</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -150,102 +150,47 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2016-01-05">2016-01-05</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">java实现将多个文件打包成zip压缩文件以及对压缩文件的加密</h2>
+            <div class="post-meta">
+                本文总共1554个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>如果仅仅需要对文件进行压缩，方法比较简单，因为java的util包中提供了相关的压缩方法.<br>首先，引入java.util.zip.ZipEntry,java.util.zip.ZipOutputStream包<br>然后加入以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">String now = StringUtils.dateToString(new Date());</div><div class="line">String path = request.getServletPath();</div><div class="line">path = request.getRealPath(path);</div><div class="line">path = path.substring(0,path.lastIndexOf(&quot;\\&quot;))+&quot;\\&quot;;</div><div class="line">File zipFile = new File(path+&quot;edm_expcsv\\&quot;+&quot;EDM_expcsv_&quot;+now+&quot;.zip&quot;); //压缩的文件名和地址 </div><div class="line">ZipOutputStream out2 = new ZipOutputStream(new FileOutputStream(zipFile));//传入压缩文件路径，得到压缩流</div><div class="line"> byte[] buffer = new byte[1024];</div><div class="line"> File[] file1 = &#123;new File(path+file),new File(path+file2)&#125;;</div><div class="line">for(int x=0;x&lt;file1.length;x++) &#123;</div><div class="line"> FileInputStream fis = new FileInputStream(file1[x]);</div><div class="line">out2.putNextEntry(new ZipEntry(file1[x].getName()));//将要压缩的文件放入压缩流</div><div class="line">  int len;</div><div class="line">//读入需要下载的文件的内容，打包到zip文件</div><div class="line">  while((len = fis.read(buffer))&gt;0) &#123;</div><div class="line"> out2.write(buffer,0,len);</div><div class="line">  &#125;</div><div class="line"> out2.closeEntry();</div><div class="line"> fis.close();</div><div class="line">&#125;</div><div class="line">out2.close();</div></pre></td></tr></table></figure></p>
+<p>如果是要对文件压缩并加密，则使用下面的方法，但是值支持单个文件压缩</p>
+<p>先将ant.jar commons-io.jar EncryptZip.jar EncryptZip.jar winzip.1.1.0.jar文件放到lib包中</p>
+<p>然后在头文件import中加入String,java.io.File,de.idyl.winzipaes.AesZipFileEncrypter,de.idyl.winzipaes.impl.AESEncrypterBC</p>
+<p>然后加入代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">File file = newFile(s); //定义压缩文件的路径</div><div class="line">File zipFile = new File(b + &quot;\\demo.zip&quot;);//压缩的文件名和地址</div><div class="line">AESEncrypterBC bc = new AESEncrypterBC();</div><div class="line">AesZipFileEncrypter azfe = new AesZipFileEncrypter(zipFile, bc);</div><div class="line">azfe.setEncoding(&quot;UTF-8&quot;); // 编码格式是在这传进去的</div><div class="line">azfe.add(file,&quot;123.jpg&quot;, &quot;123&quot;); //1：要压缩的文件路径，2：为压缩的文件命名3：为密码</div><div class="line">azfe.close();</div></pre></td></tr></table></figure></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
             </a>
-            <em>·</em>2017-08-18
         </div>
-        <a class="post-title" href="/2017/08/18/kubernetes和Swarm，你站哪一队？/" target="_blank" title="kubernetes和Swarm，你站哪一队？">kubernetes和Swarm，你站哪一队？</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+        
+        <div class="post-tags">Tags：
             
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kubernetes/" target="_blank">kubernetes</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/python/" target="_blank">python</a>
+            <a href="/tags/java/">java</a>
             
         </div>
-    </div>
-    <div class="post-desc">
-        kubernetes和Swarm，你站哪一队？
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-08-07
-        </div>
-        <a class="post-title" href="/2017/08/07/java实现kubernates-API的访问调用/" target="_blank" title="java实现kubernates API的访问调用">java实现kubernates API的访问调用</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/java/" target="_blank">java</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kuberbets/" target="_blank">kuberbets</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        java实现kubernates API的访问调用
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong></strong>
-            </a>
-            <em>·</em>2017-07-05
-        </div>
-        <a class="post-title" href="/2017/07/05/如何运用docker配合python开发/" target="_blank" title="如何运用docker配合python开发">如何运用docker配合python开发</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/python/" target="_blank">python</a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/kuberbets/" target="_blank">kuberbets</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        如何运用docker配合python开发
-    </div>
-</article>
-
-
-
+        
+    </article>
     
 </div>
-<!-- 分页开始 -->
-
-
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">

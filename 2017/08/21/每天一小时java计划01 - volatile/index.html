@@ -1,0 +1,246 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+<!--
+//                            _ooOoo_
+//                           o8888888o
+//                           88" . "88
+//                           (| -_- |)
+//                            O\ = /O
+//                        ____/`---'\____
+//                      .   ' \\| |// `.
+//                       / \\||| : |||// \
+//                     / _||||| -:- |||||- \
+//                       | | \\\ - /// | |
+//                     | \_| ''\---/'' | |
+//                      \ .-\__ `-` ___/-. /
+//                   ___`. .' /--.--\ `. . __
+//                ."" '< `.___\_<|>_/___.' >'"".
+//               | | : `- \`.;`\ _ /`;.`/ - ` : | |
+//                 \ \ `-. \_ __\ /__ _/ .-` / /
+//         ======`-.____`-.___\_____/___.-`____.-'======
+//                            `=---='
+//                 拦截插件累计拦截逗比攻击"1381438"次！
+//         .............................................
+//                  佛祖保佑             永无BUG
+//          佛曰:
+//                  写字楼里写字间，写字间里程序员；
+//                  程序人员写程序，又拿程序换酒钱。
+//                  酒醒只在网上坐，酒醉还来网下眠；
+//                  酒醉酒醒日复日，网上网下年复年。
+//                  但愿老死电脑间，不愿鞠躬老板前；
+//                  奔驰宝马贵者趣，公交自行程序员。
+//                  别人笑我忒疯癫，我笑自己命太贱；
+//                  不见满街漂亮妹，哪个归得程序员？
+-->
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="Jason Wang">
+<link rel="stylesheet" href="/css/SimpleStyle.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>每天一小时java计划01 - volatile - Jason Say</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="Jason写字的地方">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="JSay">JSay</a>
+		<!--<a href="/archives" title="Archives"><i class="fa fa-archives"></i><span>Archives</span></a> -->
+		<a class="site-name" href="/categories/java" title="Java">Java</a>
+		<a class="site-name" href="/categories/python" title="Python">Python</a>
+		<a class="site-name" href="/categories/docker" title="容器云">容器云</a>
+		<a class="site-name" href="/categories/books" title="读的书">读的书</a>
+		<a class="site-name" href="/categories/travel" title="去的地方">去的地方</a>
+		<a class="site-name" href="/categories/lovers" title="爱的人">爱的人</a>
+		<a class="site-name" href="/about" title="关于我">关于我</a>
+    </nav>
+</div>
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-weixin-mp" href="javascript:"><i class="fa fa-weixin"></i></a>
+</div>
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        <img class="avatar" width="72" src="/images/favicon.png" alt="avatar" />
+        <h1>Jason Say</h1>
+        <h3>不积跬步 无以至千里</h3>
+        <p>Jason写字的地方</p>
+        <div class="cover-sns">
+            <div class="btn btn-slack">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-slack"></i></a>
+            </div>
+            <div class="btn btn-weibo">
+                <a href="" target="_blank" rel="nofollow"><i class="fa fa-weibo"></i></a>
+            </div>
+            <div class="btn btn-facebook">
+                <a href=""  target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+            </div>
+            <div class="btn btn-github">
+                <a href="https://github.com/wjs7740"  target="_blank" rel="nofollow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/../archives" data-name="归档">归档</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">Input Search key Words Here</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="Input Search key Words Here" />
+        <button type="submit" class="search-form-submit" title="Search"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank"></a>
+                    <span title="最后编辑于2017-08-21">2017-08-21</span>
+                </p>
+                <p></p>
+            </div>
+            <h2 class="post-title">每天一小时java计划01 - volatile</h2>
+            <div class="post-meta">
+                本文总共7537个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>原文链接：<br><a href="http://www.cnblogs.com/dolphin0520/p/3920373.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3920373.html</a></p>
+<h3 id="1-volatile关键字的两层语义"><a href="#1-volatile关键字的两层语义" class="headerlink" title="1.volatile关键字的两层语义"></a>1.volatile关键字的两层语义</h3><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>2）禁止进行指令重排序。<br>先看一段代码，假如线程1先执行，线程2后执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//线程1</div><div class="line">boolean stop = false;</div><div class="line">while(!stop)&#123;</div><div class="line">    doSomething();</div><div class="line">&#125;</div><div class="line"> </div><div class="line">//线程2</div><div class="line">stop = true;</div></pre></td></tr></table></figure></p>
+<p>这段代码是很典型的一段代码，很多人在中断线程时可能都会采用这种标记办法。但是事实上，这段代码会完全运行正确么？即一定会将线程中断么？不一定，也许在大多数时候，这个代码能够把线程中断，但是也有可能会导致无法中断线程（虽然这个可能性很小，但是只要一旦发生这种情况就会造成死循环了）。<br>下面解释一下这段代码为何有可能导致无法中断线程。在前面已经解释过，每个线程在运行过程中都有自己的工作内存，那么线程1在运行的时候，会将stop变量的值拷贝一份放在自己的工作内存当中。<br>那么当线程2更改了stop变量的值之后，但是还没来得及写入主存当中，线程2转去做其他事情了，那么线程1由于不知道线程2对stop变量的更改，因此还会一直循环下去。<br>但是用volatile修饰之后就变得不一样了：<br>第一：使用volatile关键字会强制将修改的值立即写入主存；<br>第二：使用volatile关键字的话，当线程2进行修改时，会导致线程1的工作内存中缓存变量stop的缓存行无效（反映到硬件层的话，就是CPU的L1或者L2缓存中对应的缓存行无效）；<br>第三：由于线程1的工作内存中缓存变量stop的缓存行无效，所以线程1再次读取变量stop的值时会去主存读取。<br>那么在线程2修改stop值时（当然这里包括2个操作，修改线程2工作内存中的值，然后将修改后的值写入内存），会使得线程1的工作内存中缓存变量stop的缓存行无效，然后线程1读取时，发现自己的缓存行无效，它会等待缓存行对应的主存地址被更新之后，然后去对应的主存读取最新的值。<br>那么线程1读取到的就是最新的正确的值。</p>
+<h3 id="2-volatile保证原子性吗？"><a href="#2-volatile保证原子性吗？" class="headerlink" title="2.volatile保证原子性吗？"></a>2.volatile保证原子性吗？</h3><p>从上面知道volatile关键字保证了操作的可见性，但是volatile能保证对变量的操作是原子性吗？<br>下面看一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public volatile int inc = 0;</div><div class="line"> </div><div class="line">    public void increase() &#123;</div><div class="line">        inc++;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        final Test test = new Test();</div><div class="line">        for(int i=0;i&lt;10;i++)&#123;</div><div class="line">            new Thread()&#123;</div><div class="line">                public void run() &#123;</div><div class="line">                    for(int j=0;j&lt;1000;j++)</div><div class="line">                        test.increase();</div><div class="line">                &#125;;</div><div class="line">            &#125;.start();</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        while(Thread.activeCount()&gt;1)  //保证前面的线程都执行完</div><div class="line">            Thread.yield();</div><div class="line">        System.out.println(test.inc);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>大家想一下这段程序的输出结果是多少？也许有些朋友认为是10000。但是事实上运行它会发现每次运行结果都不一致，都是一个小于10000的数字。<br>可能有的朋友就会有疑问，不对啊，上面是对变量inc进行自增操作，由于volatile保证了可见性，那么在每个线程中对inc自增完之后，在其他线程中都能看到修改后的值啊，所以有10个线程分别进行了1000次操作，那么最终inc的值应该是1000*10=10000。<br>这里面就有一个误区了，volatile关键字能保证可见性没有错，但是上面的程序错在没能保证原子性。可见性只能保证每次读取的是最新的值，但是volatile没办法保证对变量的操作的原子性。<br>在前面已经提到过，自增操作是不具备原子性的，它包括读取变量的原始值、进行加1操作、写入工作内存。那么就是说自增操作的三个子操作可能会分割开执行，就有可能导致下面这种情况出现：<br>假如某个时刻变量inc的值为10，<br>线程1对变量进行自增操作，线程1先读取了变量inc的原始值，然后线程1被阻塞了；<br>然后线程2对变量进行自增操作，线程2也去读取变量inc的原始值，由于线程1只是对变量inc进行读取操作，而没有对变量进行修改操作，所以不会导致线程2的工作内存中缓存变量inc的缓存行无效，所以线程2会直接去主存读取inc的值，发现inc的值时10，然后进行加1操作，并把11写入工作内存，最后写入主存。<br>然后线程1接着进行加1操作，由于已经读取了inc的值，注意此时在线程1的工作内存中inc的值仍然为10，所以线程1对inc进行加1操作后inc的值为11，然后将11写入工作内存，最后写入主存。<br>那么两个线程分别进行了一次自增操作后，inc只增加了1。<br>解释到这里，可能有朋友会有疑问，不对啊，前面不是保证一个变量在修改volatile变量时，会让缓存行无效吗？然后其他线程去读就会读到新的值，对，这个没错。这个就是上面的happens-before规则中的volatile变量规则，但是要注意，线程1对变量进行读取操作之后，被阻塞了的话，并没有对inc值进行修改。然后虽然volatile能保证线程2对变量inc的值读取是从内存中读取的，但是线程1没有进行修改，所以线程2根本就不会看到修改的值。<br>根源就在这里，自增操作不是原子性操作，而且volatile也无法保证对变量的任何操作都是原子性的。<br>把上面的代码改成以下任何一种都可以达到效果：<br>采用synchronized：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public  int inc = 0;</div><div class="line"> </div><div class="line">    public synchronized void increase() &#123;</div><div class="line">        inc++;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        final Test test = new Test();</div><div class="line">        for(int i=0;i&lt;10;i++)&#123;</div><div class="line">            new Thread()&#123;</div><div class="line">                public void run() &#123;</div><div class="line">                    for(int j=0;j&lt;1000;j++)</div><div class="line">                        test.increase();</div><div class="line">                &#125;;</div><div class="line">            &#125;.start();</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        while(Thread.activeCount()&gt;1)  //保证前面的线程都执行完</div><div class="line">            Thread.yield();</div><div class="line">        System.out.println(test.inc);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>采用Lock：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public  int inc = 0;</div><div class="line">    Lock lock = new ReentrantLock();</div><div class="line"> </div><div class="line">    public  void increase() &#123;</div><div class="line">        lock.lock();</div><div class="line">        try &#123;</div><div class="line">            inc++;</div><div class="line">        &#125; finally&#123;</div><div class="line">            lock.unlock();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        final Test test = new Test();</div><div class="line">        for(int i=0;i&lt;10;i++)&#123;</div><div class="line">            new Thread()&#123;</div><div class="line">                public void run() &#123;</div><div class="line">                    for(int j=0;j&lt;1000;j++)</div><div class="line">                        test.increase();</div><div class="line">                &#125;;</div><div class="line">            &#125;.start();</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        while(Thread.activeCount()&gt;1)  //保证前面的线程都执行完</div><div class="line">            Thread.yield();</div><div class="line">        System.out.println(test.inc);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>采用AtomicInteger：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public class Test &#123;</div><div class="line">    public  AtomicInteger inc = new AtomicInteger();</div><div class="line"> </div><div class="line">    public  void increase() &#123;</div><div class="line">        inc.getAndIncrement();</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        final Test test = new Test();</div><div class="line">        for(int i=0;i&lt;10;i++)&#123;</div><div class="line">            new Thread()&#123;</div><div class="line">                public void run() &#123;</div><div class="line">                    for(int j=0;j&lt;1000;j++)</div><div class="line">                        test.increase();</div><div class="line">                &#125;;</div><div class="line">            &#125;.start();</div><div class="line">        &#125;</div><div class="line"> </div><div class="line">        while(Thread.activeCount()&gt;1)  //保证前面的线程都执行完</div><div class="line">            Thread.yield();</div><div class="line">        System.out.println(test.inc);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在java 1.5的java.util.concurrent.atomic包下提供了一些原子操作类，即对基本数据类型的 自增（加1操作），自减（减1操作）、以及加法操作（加一个数），减法操作（减一个数）进行了封装，保证这些操作是原子性操作。atomic是利用CAS来实现原子性操作的（Compare And Swap），CAS实际上是利用处理器提供的CMPXCHG指令实现的，而处理器执行CMPXCHG指令是一个原子性操作。</p>
+<h3 id="3-volatile能保证有序性吗？"><a href="#3-volatile能保证有序性吗？" class="headerlink" title="3.volatile能保证有序性吗？"></a>3.volatile能保证有序性吗？</h3><p>在前面提到volatile关键字能禁止指令重排序，所以volatile能在一定程度上保证有序性。<br>volatile关键字禁止指令重排序有两层意思：<br>1）当程序执行到volatile变量的读操作或者写操作时，在其前面的操作的更改肯定全部已经进行，且结果已经对后面的操作可见；在其后面的操作肯定还没有进行；<br>2）在进行指令优化时，不能将在对volatile变量访问的语句放在其后面执行，也不能把volatile变量后面的语句放到其前面执行。<br>可能上面说的比较绕，举个简单的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//x、y为非volatile变量</div><div class="line">//flag为volatile变量</div><div class="line"> </div><div class="line">x = 2;        //语句1</div><div class="line">y = 0;        //语句2</div><div class="line">flag = true;  //语句3</div><div class="line">x = 4;         //语句4</div><div class="line">y = -1;       //语句5</div></pre></td></tr></table></figure></p>
+<p>由于flag变量为volatile变量，那么在进行指令重排序的过程的时候，不会将语句3放到语句1、语句2前面，也不会讲语句3放到语句4、语句5后面。但是要注意语句1和语句2的顺序、语句4和语句5的顺序是不作任何保证的。<br>并且volatile关键字能保证，执行到语句3时，语句1和语句2必定是执行完毕了的，且语句1和语句2的执行结果对语句3、语句4、语句5是可见的。<br>那么我们回到前面举的一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//线程1:</div><div class="line">context = loadContext();   //语句1</div><div class="line">inited = true;             //语句2</div><div class="line"> </div><div class="line">//线程2:</div><div class="line">while(!inited )&#123;</div><div class="line">  sleep()</div><div class="line">&#125;</div><div class="line">doSomethingwithconfig(context);</div></pre></td></tr></table></figure></p>
+<p>前面举这个例子的时候，提到有可能语句2会在语句1之前执行，那么久可能导致context还没被初始化，而线程2中就使用未初始化的context去进行操作，导致程序出错。<br>这里如果用volatile关键字对inited变量进行修饰，就不会出现这种问题了，因为当执行到语句2时，必定能保证context已经初始化完毕。</p>
+<h3 id="4-volatile的原理和实现机制"><a href="#4-volatile的原理和实现机制" class="headerlink" title="4.volatile的原理和实现机制"></a>4.volatile的原理和实现机制</h3><p>前面讲述了源于volatile关键字的一些使用，下面我们来探讨一下volatile到底如何保证可见性和禁止指令重排序的。<br>下面这段话摘自《深入理解Java虚拟机》：<br>“观察加入volatile关键字和没有加入volatile关键字时所生成的汇编代码发现，加入volatile关键字时，会多出一个lock前缀指令”<br>lock前缀指令实际上相当于一个内存屏障（也成内存栅栏），内存屏障会提供3个功能：<br>1）它确保指令重排序时不会把其后面的指令排到内存屏障之前的位置，也不会把前面的指令排到内存屏障的后面；即在执行到内存屏障这句指令时，在它前面的操作已经全部完成；<br>2）它会强制将对缓存的修改操作立即写入主存；<br>3）如果是写操作，它会导致其他CPU中对应的缓存行无效。</p>
+<h3 id="5-使用volatile关键字的场景"><a href="#5-使用volatile关键字的场景" class="headerlink" title="5.使用volatile关键字的场景"></a>5.使用volatile关键字的场景</h3><p>synchronized关键字是防止多个线程同时执行一段代码，那么就会很影响程序执行效率，而volatile关键字在某些情况下性能要优于synchronized，但是要注意volatile关键字是无法替代synchronized关键字的，因为volatile关键字无法保证操作的原子性。通常来说，使用volatile必须具备以下2个条件：<br>1）对变量的写操作不依赖于当前值<br>2）该变量没有包含在具有其他变量的不变式中<br>实际上，这些条件表明，可以被写入 volatile 变量的这些有效值独立于任何程序的状态，包括变量的当前状态。<br>事实上，我的理解就是上面的2个条件需要保证操作是原子性操作，才能保证使用volatile关键字的程序在并发时能够正确执行。<br>下面列举几个Java中使用volatile的几个场景。<br>1.状态标记量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">volatile boolean flag = false;</div><div class="line"> </div><div class="line">while(!flag)&#123;</div><div class="line">    doSomething();</div><div class="line">&#125;</div><div class="line"> </div><div class="line">public void setFlag() &#123;</div><div class="line">    flag = true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">volatile boolean inited = false;</div><div class="line">//线程1:</div><div class="line">context = loadContext();  </div><div class="line">inited = true;            </div><div class="line"> </div><div class="line">//线程2:</div><div class="line">while(!inited )&#123;</div><div class="line">sleep()</div><div class="line">&#125;</div><div class="line">doSomethingwithconfig(context);</div></pre></td></tr></table></figure></p>
+<p>2.double check<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">class Singleton&#123;</div><div class="line">    private volatile static Singleton instance = null;</div><div class="line"> </div><div class="line">    private Singleton() &#123;</div><div class="line"> </div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    public static Singleton getInstance() &#123;</div><div class="line">        if(instance==null) &#123;</div><div class="line">            synchronized (Singleton.class) &#123;</div><div class="line">                if(instance==null)</div><div class="line">                    instance = new Singleton();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>至于为何需要这么写请参考：<br>《Java 中的双重检查（Double-Check）》<a href="http://blog.csdn.net/dl88250/article/details/5439024" target="_blank" rel="external">http://blog.csdn.net/dl88250/article/details/5439024</a><br>和<a href="http://www.iteye.com/topic/652440" target="_blank" rel="external">http://www.iteye.com/topic/652440</a><br>参考资料：</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-weixin-mp" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-mobile" aria-hidden="true"></i> 打包
+            </a>
+        </div>
+        
+        <div class="post-tags">Tags：
+            
+            <a href="/tags/java/">java</a>
+            
+        </div>
+        
+    </article>
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <!--
+		<p>
+            <a href="/about"  title="About">About</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/help" title="Help" >Help</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/video" title="Video">Video</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+		-->
+		<!-- 自定义链接 -->
+		<!--
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+		-->
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2017 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+        </p>
+        
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '08/01/2017',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            customImg: '/images/weixin-mp.png'
+        });
+    });
+</script>
+</body>
+</html>
